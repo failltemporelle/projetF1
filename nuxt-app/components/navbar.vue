@@ -18,7 +18,7 @@
         </div>
       </div>
       <div class="navbar-center">
-        <a class="btn btn-ghost normal-case text-xl" @click="goHomePage()">gtre one</a>
+        <a class="btn btn-ghost normal-case text-xl" @click="goHomePage()">Formula one</a>
       </div>
       <div class="navbar-end">
         <button class="btn btn-ghost btn-circle">
@@ -69,23 +69,23 @@
             },
     
         goPilotesPage() {
-          window.location.href = "https://projectf1.vercel.app/pilotes"
+          window.location.href = "https://projet-f1.vercel.app/pilotes"
         },
     
         goEcuriePage() {
-          window.location.href = "https://projectf1.vercel.app/ecurie"
+          window.location.href = "https://projet-f1.vercel.app/ecurie"
         },
     
         course() {
-          window.location.href = "https://projectf1.vercel.app/course"
+          window.location.href = "https://projet-f1.vercel.app/course"
         },
     
         goHomePage() {
-          window.location.href = "https://projectf1.vercel.app/"
+          window.location.href = "https://projet-f1.vercel.app/"
         },
     
         goCircuits() {
-          window.location.href = "https://projectf1.vercel.app/circuits"
+          window.location.href = "https://projet-f1.vercel.app/circuits"
         }
     
       }
