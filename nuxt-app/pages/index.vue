@@ -8,6 +8,7 @@
       <h1 class="mb-5 text-5xl font-bold"></h1>
       <p class="mb-5">Toutes les informations sur la saison de f1 en cours</p>
       <button class="btn btn-succes" @click="goPilotesPage()">Pilotes</button>
+      <nuxt-link to="/connect" class="btn btn-primary">Calendrier</nuxt-link>
       
     </div>
   </div>

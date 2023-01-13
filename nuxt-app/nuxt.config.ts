@@ -2,6 +2,10 @@
 export default defineNuxtConfig({
     ssr: false,
     modules: ['@nuxtjs/tailwindcss'],
+
+    plugins : [ "~/plugins/client.js" ],
+
+ 
     
   
     typescript: {
