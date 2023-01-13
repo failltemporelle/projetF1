@@ -1,6 +1,5 @@
 <template>
 <Navbar />
-
 <div class="flex flex-row flex-wrap place-content-center">
         <div v-for="item in this.f1.course" class="card w-60 bg-red-700 shadow-xl ml-6 mt-6">
             <div class="card-body">
@@ -10,18 +9,8 @@
             </div>
         </div>
     </div>
-
-
-
-
 </template>
-
-
-
-
 <script>
-
-
 export default {
     created() {
         this.getCircuit();
@@ -35,7 +24,6 @@ export default {
             },
         };
     },
-
     methods: {
         getCircuit() {
             this.f1.course = [];
@@ -48,9 +36,5 @@ export default {
         },
     },
 };
-
-
-
-
 
 </script>
