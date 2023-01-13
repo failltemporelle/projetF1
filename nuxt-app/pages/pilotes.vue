@@ -33,7 +33,7 @@ export default {
   methods: {
     getpoints() {
       this.f1.ecuries = [];
-      fetch("https://ergast.com/api/f1/2022/driverStandings.json")
+      fetch("https://ergast.com/api/f1/2023/driverStandings.json")
         .then((response) => response.json())
         .then((data) => {
           this.f1.points =   data.MRData.StandingsTable.StandingsLists[0].DriverStandings;

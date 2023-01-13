@@ -22,7 +22,6 @@
                         <input type="password" placeholder="password" class="input input-bordered" />
                     </div>
                     <div class="form-control mt-6">
-                        <button class="btn btn-primary" @click="createUser()">Login</button>
                         <button class="btn btn-primary mt-6">create account</button>
                     </div>
                 </div>
@@ -30,23 +29,3 @@
         </div>
     </div>
 </template>
-
-
-
-<script>
-
-export default {
-  methods: {
-    async createUser() {
-      try {
-        await this.$fire.auth.createUserWithEmailAndPassword(
-          'test@gmail.com',
-          '123456'
-        )
-      } catch (e) {
-        console.log(e)
-      }
-    }
-  }
-}
-</script>
