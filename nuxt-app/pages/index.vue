@@ -21,7 +21,7 @@ export default {
   methods: {
 
     goPilotesPage() {
-      window.location.href = "https://projectf1.vercel.app/pilotes"
+      window.location.href = "https://projet-f1.vercel.app/pilotes"
     },
   }
 }
