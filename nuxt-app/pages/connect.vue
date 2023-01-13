@@ -22,7 +22,6 @@
                         <input type="password" placeholder="password" class="input input-bordered" />
                     </div>
                     <div class="form-control mt-6">
-                        <button class="btn btn-primary" @click="signIn()">Create account 2</button>
                         <button class="btn btn-primary mt-6">create account</button>
                     </div>
                 </div>
@@ -30,27 +29,3 @@
         </div>
     </div>
 </template>
-
-
-
-<script>
-
-
-
-
-export default {
-  methods: {
-    async signIn() {
-      /* signIn sends the user a magic link */
-      const { email } = this
-      if (!email) return
-      const { error, data } = await this.$supabase.auth.signIn({
-        email
-      })
-      this.submitted = true
-    },
-  },
-   
-}
-
-</script>
