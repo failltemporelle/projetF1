@@ -17,7 +17,10 @@
 </template>
 
 <script>
+import { Analytics } from '@vercel/analytics/react';
+
 export default {
+  
   methods: {
 
     goPilotesPage() {
