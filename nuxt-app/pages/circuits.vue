@@ -41,10 +41,6 @@ export default {
 </script>
 
 <style>
-
-
-
-
 .card {
 background-color: #FF3CAC;
 background-image: -webkit-linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
