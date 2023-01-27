@@ -7,7 +7,7 @@
         <div class="card-body">
           <p class="font-bold">{{ item.Constructor.name }}</p> 
           <progress class="progress w-50" :value=item.points max="696"/>
-          <img :src="`https://raw.githubusercontent.com/failltemporelle/Projetp/main/f1-app/assets/ecuries/${item.Constructor.constructorId}.png`">
+          <!-- <img :src="`https://raw.githubusercontent.com/failltemporelle/Projetp/main/f1-app/assets/ecuries/${item.Constructor.constructorId}.png`"> -->
         </div>
       </div>
     </div>
@@ -45,3 +45,19 @@ export default {
 
 
 </script>
+
+
+<style>
+
+
+.card {
+background-color: #FF3CAC;
+background-image: -webkit-linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+background-image: -moz-linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+background-image: -o-linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+
+}
+
+
+</style>

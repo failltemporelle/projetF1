@@ -1,8 +1,9 @@
 <template data-theme="cupcake">
   <navbar />
 
-  <div class="hero min-h-screen"
-    style="background-image: url(https://cdn.motorsportmagazine.com/wp-content/uploads/2020/08/19104118/McLaren-Ferrari-red-Bull-and-Mercedes-cars-lined-up-in-parc-ferme-after-the-2020-F1-Spanish-Grand-Prix.jpg);">
+
+  <!-- <div class="hero min-h-screen"
+    style="background-image: url(https://cdn.motorsportmagazine.com/wp-content/uploads/2020/08/19104118/McLaren-Ferrari-red-Bull-and-Mercedes-cars-lined-up-in-parc-ferme-after-the-2020-F1-Spanish-Grand-Prix.jpg);"> -->
     <div class="hero-overlay bg-opacity-60"></div>
     <div class="hero-content text-center text-neutral-content">
       <div class="max-w-md">
@@ -13,7 +14,7 @@
 
       </div>
     </div>
-  </div>
+  <!-- </div>  -->
 </template>
 
 <script>
@@ -29,4 +30,13 @@ export default {
   }
 }
 </script>
+
+
+<style>
+
+head, html {
+  background-color: #ff0000;
+  background-image: linear-gradient(90deg,  #ff0000 0%, #000000 100%);
+}
+</style>
 
