@@ -14,7 +14,6 @@
             <li><a @click="course()">Courses : {{ item.raceName }}</a></li>
             <li> <a @click="goCircuits()"> Circuits</a></li>
           </div>
-           
           </ul>
         </div>
       </div>
