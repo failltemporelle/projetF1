@@ -35,7 +35,7 @@ export default {
                     this.f1.classement = data.MRData.RaceTable.Races[0].Results;
                 });
         },
-    },
+    }, 
 };
 
 </script>
