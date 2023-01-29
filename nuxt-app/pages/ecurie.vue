@@ -7,7 +7,7 @@
         <div class="card-body">
           <p class="font-bold">{{ item.Constructor.name }}</p>
           <progress class="progress w-50" :value=item.points max="696" />
-          <!-- <img :src="`https://raw.githubusercontent.com/failltemporelle/Projetp/main/f1-app/assets/ecuries/${item.Constructor.constructorId}.png`"> -->
+          <img :src="`https://raw.githubusercontent.com/failltemporelle/projetF1/tree/main/nuxt-app/assets/ecuries/${item.Constructor.constructorId}.png`">
         </div>
       </div>
     </div>

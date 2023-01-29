@@ -25,7 +25,7 @@ export default {
 </script>
 <style>
 
-head, html, .hero {
+.hero {
   background-color: #ff0000;
   background-image: linear-gradient(90deg,  #ff0000 0%, #000000 100%);
 }
