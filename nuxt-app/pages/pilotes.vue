@@ -10,6 +10,7 @@
       <div class="card-body">
         <progress class="progress w-50" :value=item.points :max="416"></progress>
       </div>
+      <button class="btn btn-primary">Voir plus</button>
     </div>
   </div>
 </template>
@@ -52,13 +53,15 @@ export default {
 
 <style> 
 .card {
-
 background-color: #21D4FD;
 background-image: -webkit-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
 background-image: -moz-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
 background-image: -o-linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
 background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+}
 
-
+img {
+  border-radius: 150px;
+  border-color: #21D4FD;
 }
 </style>

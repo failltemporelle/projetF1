@@ -21,8 +21,8 @@
                 <p> {{ item.Constructor.name }}</p>
                 <p class="font-bold"> {{ item.Driver.givenName }} {{ item.Driver.familyName }}</p>
                 <p> {{ item.status }}</p>
-                <!-- <p> tour : {{item.FastestLap[0].lap}} </p> -->
-                <!-- <p> tour : {{ item.FastestLap.lap }}</p> -->
+                <!-- <p> tour : {{item.FastestLap[0].lap}} </p>
+                <p> tour : {{ item.FastestLap.lap }}</p> -->
                 <!-- <p> Rank : {{ item.FastestLap.rank }}</p>
                 <p> Time : {{ item.FastestLap.Time.time }}</p>
                 <p> Average Speed : {{ item.FastestLap.AverageSpeed.speed }} {{item.FastestLap.AverageSpeed.units}}</p> -->
