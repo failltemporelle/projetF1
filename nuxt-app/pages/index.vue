@@ -7,7 +7,7 @@
       <p class="py-6 text-white">Toutes les informations sur la saison de F1 actuelle</p>
       <nuxt-link to="/pilotes" class="btn btn-primary">Pilotes</nuxt-link>
     </div>
-  </div>
+  </div> 
 </div>
 </template>
 
