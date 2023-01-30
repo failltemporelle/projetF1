@@ -7,6 +7,9 @@
                 <p> {{item.Location.locality}}</p>
                 <p> {{item.Location.country}}</p>
             </div>
+            <figure><img
+          :src="`https://raw.githubusercontent.com/failltemporelle/Projetp/main/f1-app/assets/pilotes/${item.circuitId}.png`">
+      </figure>
         </div>
     </div>
 </template>
