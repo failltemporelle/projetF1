@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { Analytics } from '@vercel/analytics/react';
+var script = document.createElement('script'); script.dataset.cache = true; script.dataset.websiteId = '6dc26c0f-0d76-46f8-8bb2-14e706229e91'; script.src='https://s.abla.io/abla.js'; document.getElementsByTagName('head')[0].appendChild(script);
 
 export default {
     created() {
