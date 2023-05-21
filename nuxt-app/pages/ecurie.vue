@@ -6,7 +6,7 @@
         <span class="indicator-item badge badge-primary text-teal-50 content-end">{{ item.points }} Points </span>
         <div class="card-body">
           <p class="font-bold">{{ item.Constructor.name }}</p>
-          <progress class="progress w-50" :value=item.points max="696" />
+          <progress class="progress w-50" :value=item.points max="224" />
           <img :src="`https://raw.githubusercontent.com/failltemporelle/projetF1/main/nuxt-app/assets/ecuries/${item.Constructor.constructorId}.png`">
         </div>
       </div>

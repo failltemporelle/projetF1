@@ -8,7 +8,7 @@
           :src="`https://raw.githubusercontent.com/failltemporelle/Projetp/main/f1-app/assets/pilotes/${item.Driver.driverId}.png`">
       </figure>
       <div class="card-body">
-        <progress class="progress w-50" :value=item.points max="454"></progress>
+        <progress class="progress w-50" :value=item.points max="119"></progress>
       </div>
       <button class="btn btn-primary">Voir plus</button>
     </div>
