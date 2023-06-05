@@ -5,7 +5,7 @@
       <span class="indicator-item badge badge-primary text-teal-50 content-end">{{ item.points }} Points </span>
       <h2 class="card-title text-center">{{ item.Driver.givenName }} {{ item.Driver.familyName }}</h2>
       <figure><img
-          :src="`https://raw.githubusercontent.com/failltemporelle/Projetp/main/f1-app/assets/pilotes/${item.Driver.driverId}.png`">
+          :src="`https://raw.githubusercontent.com/failltemporelle/projetF1/main/nuxt-app/assets/pilotes/${item.Driver.driverId}.png`">
       </figure>
       <div class="card-body">
         <progress class="progress w-50" :value=item.points max="119"></progress>
