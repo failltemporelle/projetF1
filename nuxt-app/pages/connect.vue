@@ -13,19 +13,60 @@
                         <label class="label">
                             <span class="label-text">Email</span>
                         </label>
-                        <input type="email" placeholder="email" class="input input-bordered" />
+                        <input v-model="email" type="email" placeholder="email" class="input input-bordered" />
                     </div>
                     <div class="form-control">
                         <label class="label">
                             <span class="label-text password">Password</span>
                         </label>
-                        <input type="password" placeholder="password" class="input input-bordered" />
+                        <input v-model="password" type="password" placeholder="password" class="input input-bordered" />
                     </div>
                     <div class="form-control mt-6">
-                        <button class="btn btn-primary mt-6">create account</button>
+                        <button class="">create account</button>
+                        <button @click="createAccount()">test</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </template>
+
+
+<script setup lang="ts">
+import { ref } from 'vue';
+
+const email = ref("");
+const password = ref("");
+
+const createAccount = async () => {
+    const apiUrl = 'https://kvwvrrxshfeijcqeqgjr.supabase.co/auth/v1/signup';
+    const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt2d3ZycnhzaGZlaWpjcWVxZ2pyIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTIyNjUzNjYsImV4cCI6MjAwNzg0MTM2Nn0.4y3C0f0mmvZGUTUL9gY-VV5T-w7rKKHgnzgMIQlXTY0';
+
+    const headers = {
+        'Content-Type': 'application/json',
+        'apiKey': apiKey,
+    };
+
+    const body = {
+        email: email.value,
+        password: password.value,
+    };
+
+    try {
+        const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers,
+            body: JSON.stringify(body),
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to create user');
+        }
+
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error(error);
+    }
+};
+</script>
