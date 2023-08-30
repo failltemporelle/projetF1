@@ -40,8 +40,6 @@ export default {
         .then((data) => {
           this.f1.points = data.MRData.StandingsTable.StandingsLists[0].DriverStandings;
           this.f1.pointMax = data.MRData.StandingsTable.StandingsLists[0].DriverStandings[0].points;
-          console.log(this.f1.pointMax + "pointMax");
-          console.log(this.f1.points + "points");
         });
     },
 

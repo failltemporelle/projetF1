@@ -14,7 +14,6 @@
   </div>
 </template>
 <script>
-import { Analytics } from '@vercel/analytics/react';
 export default {
   created() {
     this.getpointE();
