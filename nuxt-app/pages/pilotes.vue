@@ -8,7 +8,7 @@
           :src="`https://raw.githubusercontent.com/failltemporelle/projetF1/main/nuxt-app/assets/pilotes/${item.Driver.driverId}.png`">
       </figure>
       <div class="card-body">
-        <progress class="progress w-50" :value=item.points max="119"></progress>
+        <progress class="progress w-50" :value=item.points max="339"></progress>
       </div>
       <button class="btn btn-primary">Voir plus</button>
     </div>
@@ -40,8 +40,8 @@ export default {
         .then((data) => {
           this.f1.points = data.MRData.StandingsTable.StandingsLists[0].DriverStandings;
           this.f1.pointMax = data.MRData.StandingsTable.StandingsLists[0].DriverStandings[0].points;
-          console.log(this.f1.pointMax);
-          console.log(this.f1.points);
+          console.log(this.f1.pointMax + "pointMax");
+          console.log(this.f1.points + "points");
         });
     },
 
