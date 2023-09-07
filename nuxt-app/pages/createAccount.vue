@@ -20,8 +20,15 @@
                         </label>
                         <input v-model="password" type="password" placeholder="password" class="input input-bordered" />
                     </div>
-                    <div class="form-control mt-6">
-                        <button class="btn btn-wide" @click="createAccount()">test</button>
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text password">Confirm Password</span>
+                        </label>
+                        <input type="password" placeholder="password" class="input input-bordered" />
+                    </div>
+                    <div class="form-control mt-6 place flex-wrap">
+                        <button class="btn btn-wide" @click="createAccount()">Créer mon compte</button>
+                        <button class="btn btn-wide btn-primary">Annuler</button>
                     </div>
                 </div>
             </div>
@@ -35,6 +42,10 @@ import { ref } from 'vue';
 
 const email = ref("");
 const password = ref("");
+
+onMounted(() => {
+    authenticateUser(EMAIL, PASSWORD);
+});
 
 const createAccount = async () => {
     const apiUrl = 'https://kvwvrrxshfeijcqeqgjr.supabase.co/auth/v1/signup';
@@ -56,10 +67,11 @@ const createAccount = async () => {
             headers,
             body: JSON.stringify(body),
         });
-
+        alert('votre compte est bien crée')
         location.href = '/';
 
         if (!response.ok) {
+            alert('votre compte n\'est pas crée');
             throw new Error('Failed to create user');
         }
 
@@ -69,4 +81,45 @@ const createAccount = async () => {
         console.error(error);
     }
 };
+
+
+
+// Remplacez ces valeurs par les vôtres
+const apiUrl = 'https://kvwvrrxshfeijcqeqgjr.supabase.co';
+const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt2d3ZycnhzaGZlaWpjcWVxZ2pyIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTI5OTcxMTksImV4cCI6MjAwODU3MzExOX0.k-5YYvJo4FbAw9CQxmbCE8ZpDw54qY1sVXWbY0j4g_8';
+
+const EMAIL = 'test@test.com';
+const PASSWORD = '123';
+
+async function authenticateUser(email:string, password:string) {
+  try {
+    const response = await fetch(`${apiUrl}/auth/v1/token`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        apikey: apiKey,
+      },
+      body: JSON.stringify({ email, password }),
+    });
+
+    const responseData = await response.json();
+
+    if (response.status === 200) {
+      const { access_token, refresh_token } = responseData;
+      console.log('Authentification réussie.');
+      console.log('Access Token:', access_token);
+      console.log('Refresh Token:', refresh_token);
+    } else {
+      console.error(`Erreur d'authentification : ${responseData.error.message}`);
+    }
+  } catch (error) {
+    console.error('Une erreur s\'est produite :', error);
+  }
+}
+
+authenticateUser(EMAIL, PASSWORD);
+
+
+
+
 </script>

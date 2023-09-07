@@ -5,6 +5,7 @@
     <div class="max-w-md">
       <h1 class="text-5xl font-bold text-white">Hello</h1>
       <p class="py-6 text-white">Toutes les informations sur la saison de F1 actuelle</p>
+      <nuxt-link to="/createAccount" class="btn btn-primary">Créer un compte</nuxt-link>
     </div>
   </div> 
 </div>
@@ -12,9 +13,9 @@
 
 <style>
 
-.hero {
+/* .hero {
   background-color: #ff0000;
   background-image: linear-gradient(90deg,  #ff0000 0%, #000000 100%);
-}
+} */
 </style>
 
