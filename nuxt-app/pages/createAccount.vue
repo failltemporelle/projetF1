@@ -26,9 +26,9 @@
                         </label>
                         <input type="password" placeholder="password" class="input input-bordered" />
                     </div>
-                    <div class="form-control mt-6 place flex-wrap">
-                        <button class="btn btn-wide" @click="createAccount()">Créer mon compte</button>
-                        <button class="btn btn-wide btn-primary">Annuler</button>
+                    <div class="flex flex-row flex-wrap place-content-center">
+                        <button class="btn btn-wide mt-2 bg-red-700 border-none text-white font-bold" @click="createAccount()">Créer mon compte</button>
+                        <button class="btn btn-wide btn-primary mt-2 bg-red-700 border-none text-white font-bold">Annuler</button>
                     </div>
                 </div>
             </div>
