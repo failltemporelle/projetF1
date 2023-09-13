@@ -1,4 +1,4 @@
-<template data-theme="cupcake">
+<!-- <template data-theme="cupcake">
   <navbar />
   <div class="hero min-h-screen bg-base-200">
   <div class="hero-content text-center">
@@ -9,13 +9,11 @@
     </div>
   </div> 
 </div>
+</template> -->
+
+
+
+
+<template>
+  <infoPilote />
 </template>
-
-<style>
-
-/* .hero {
-  background-color: #ff0000;
-  background-image: linear-gradient(90deg,  #ff0000 0%, #000000 100%);
-} */
-</style>
-
