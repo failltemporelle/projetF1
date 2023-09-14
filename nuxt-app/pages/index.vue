@@ -1,4 +1,4 @@
-<!-- <template data-theme="cupcake">
+<template data-theme="cupcake">
   <navbar />
   <div class="hero min-h-screen bg-base-200">
   <div class="hero-content text-center">
@@ -9,11 +9,4 @@
     </div>
   </div> 
 </div>
-</template> -->
-
-
-
-
-<template>
-  <infoPilote />
 </template>
