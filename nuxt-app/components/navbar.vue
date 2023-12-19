@@ -1,4 +1,5 @@
 <template>
+    <SpeedInsights/>
     <header class="px-4 lg:px-6 h-14 flex items-center">
 
       <NuxtLink to="/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -14,3 +15,11 @@
     </nav>
   </header>
 </template>
+
+
+<script setup>
+
+
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
+</script>

@@ -1,4 +1,6 @@
 <template>
+      <SpeedInsights/>
+
     <Navbar />
     <div class="hero min-h-screen bg-base-200">
         <div class="hero-content flex-col lg:flex-row-reverse">
@@ -38,6 +40,8 @@
 
 
 <script setup lang="ts">
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 import { ref } from 'vue';
 
 const email = ref("");

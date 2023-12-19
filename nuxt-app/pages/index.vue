@@ -1,4 +1,6 @@
 <template>
+    <SpeedInsights/>
+
   <Navbar />
   <main class="flex-1">
     <section class="w-full py-6 sm:py-12 md:py-24 lg:py-32 xl:py-48">
@@ -23,3 +25,8 @@
     </section>
   </main>
 </template>
+
+<script setup>
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
+</script>

@@ -1,4 +1,6 @@
 <template>
+    <SpeedInsights/>
+
   <navbar />
   <div>
     <div class="flex flex-row flex-wrap place-content-center">
@@ -14,6 +16,8 @@
   </div>
 </template>
 <script>
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 export default {
   created() {
     this.getpointE();
