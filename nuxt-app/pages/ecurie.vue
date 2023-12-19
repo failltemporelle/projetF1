@@ -47,14 +47,6 @@ var script = document.createElement('script'); script.dataset.cache = true; scri
 </script>
 
 <style>
-.card { 
-  background-color: #FF3CAC;
-  background-image: -webkit-linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
-  background-image: -moz-linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
-  background-image: -o-linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
-  background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
-}
-
 img {
   border-radius: 10px;
 }
