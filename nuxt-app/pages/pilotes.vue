@@ -1,6 +1,4 @@
 <template>
-    <SpeedInsights/>
-
   <navbar />
   <slot />
   <h1 class="text-center">Liste des pilotes</h1>
@@ -19,6 +17,11 @@
       </figure>
       <div class="card-body">
         <progress class="progress w-50" :value="item.points" :max="f1.pointMax"></progress>
+        <button class="primary">
+          <NuxtLink :to="`/testt/${item.Driver.driverId}`">
+            <span class="text-sm font-medium hover:underline underline-offset-4">Pilotes</span>
+          </NuxtLink>
+        </button>
       </div>
     </div>
   </div>
@@ -29,13 +32,11 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import { SpeedInsights } from "@vercel/speed-insights/next"
+
 
 
 const f1 = ref({
-  driver: [],
   points: [],
-  ecuries: [],
   pointMax: null,
 });
 
@@ -45,7 +46,6 @@ const getPoints = async () => {
     const data = await response.json();
     f1.value.points = data.MRData.StandingsTable.StandingsLists[0].DriverStandings;
     f1.value.pointMax = data.MRData.StandingsTable.StandingsLists[0].DriverStandings[0].points;
-    console.log(f1.value.pointMax);
   } catch (error) {
     console.error('Erreur lors de la récupération des données :', error);
   }
@@ -54,21 +54,21 @@ const getPoints = async () => {
 onMounted(getPoints);
 
 const getUrl = (item) => {
-  return new URL(`https://raw.githubusercontent.com/failltemporelle/projetF1/main/nuxt-app/assets/pilotes/`+item+`.png`, import.meta.url).href;
+  return new URL(`https://raw.githubusercontent.com/failltemporelle/projetF1/main/nuxt-app/assets/pilotes/` + item + `.png`, import.meta.url).href;
 };
 </script>
 
 
 <style> .card {
-  background-color: #21D4FD;
-  background-image: -webkit-linear-gradient(19deg, #fd1504 0%, #1b1c1c 100%);
-  background-image: -moz-linear-gradient(19deg, #fd1504 0%, #1b1c1c 100%);
-  background-image: -o-linear-gradient(19deg, #fd1504 0%, #1b1c1c 100%);
-  background-image: linear-gradient(19deg, #fd1504 0%, #1b1c1c 100%);
-}
+   background-color: #21D4FD;
+   background-image: -webkit-linear-gradient(19deg, #fd1504 0%, #1b1c1c 100%);
+   background-image: -moz-linear-gradient(19deg, #fd1504 0%, #1b1c1c 100%);
+   background-image: -o-linear-gradient(19deg, #fd1504 0%, #1b1c1c 100%);
+   background-image: linear-gradient(19deg, #fd1504 0%, #1b1c1c 100%);
+ }
 
-.img {
-  border-radius: 10px;
-  border-color: #1b1c1c;
-}
+ .img {
+   border-radius: 10px;
+   border-color: #1b1c1c;
+ }
 </style>
