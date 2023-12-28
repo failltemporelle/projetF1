@@ -1,7 +1,7 @@
 <template>
     <Navbar />
     <div v-for="text in texts" :key="text.id">
-    <p :class="getColorClass(text.id)">hello</p>
+        <p :class="getColorClass(text.id)">hello</p>
     </div>
     <div class="bg-purple-800 text-white rounded-xl">
         <div class="px-8">
@@ -58,7 +58,6 @@ const getPilote = async () => {
         const response = await fetch(`http://ergast.com/api/f1/drivers/${idPilote}.json`);
         const data = await response.json();
         f1.value.pilote = data.MRData.DriverTable.Drivers[0];
-        console.log(f1.value.point);
     } catch (error) {
         console.error('Erreur lors de la récupération des données :', error);
     }
@@ -73,7 +72,7 @@ const selectedDriver = ref(null);
 
 const fetchDriverStandings = async () => {
     try {
-        const response = await fetch("http://ergast.com/api/f1/current/driverStandings.json");
+        const response = await fetch(`http://ergast.com/api/f1/current/driverStandings.json`);
         const data = await response.json();
         f1Standings.value = data.MRData.StandingsTable.StandingsLists[0].DriverStandings;
     } catch (error) {
@@ -89,31 +88,28 @@ onMounted(async () => {
     await fetchDriverStandings();
     var idpilote = getUrl();
     selectedDriver.value = findDriver(idpilote);
-    console.log(selectedDriver.value);
 });
 
 
 
 const texts = ref([
-  { id: getUrl(), content: "Texte 1" },
+    { id: getUrl(), content: "Texte 1" },
 ]);
 
 const getColorClass = (id) => {
-  switch (id) {
-    case 'hamilton':
-      return 'red-text';
-    default:
-      return '';
-  }
+    switch (id) {
+        case 'hamilton':
+            return 'red-text';
+        default:
+            return '';
+    }
 };
 </script>
 
 
 <style>
-
 .red-text {
-  color: red;
+    color: red;
 }
-
 </style>
 
