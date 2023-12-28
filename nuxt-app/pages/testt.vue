@@ -41,6 +41,11 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue';
+
+const f1Standings = ref(null);
+const selectedDriver = ref(null);
+
 const f1 = ref({
     pilote: {},
 });
@@ -63,13 +68,6 @@ const getPilote = async () => {
     }
 };
 
-onMounted(getPilote);
-
-import { ref, onMounted } from 'vue';
-
-const f1Standings = ref(null);
-const selectedDriver = ref(null);
-
 const fetchDriverStandings = async () => {
     try {
         const response = await fetch(`http://ergast.com/api/f1/current/driverStandings.json`);
@@ -84,13 +82,14 @@ const findDriver = (driverId) => {
     if (!f1Standings.value) return null;
     return f1Standings.value.find(driver => driver.Driver.driverId === driverId);
 };
+
+
+onMounted(getPilote); 
 onMounted(async () => {
     await fetchDriverStandings();
     var idpilote = getUrl();
     selectedDriver.value = findDriver(idpilote);
 });
-
-
 
 const texts = ref([
     { id: getUrl(), content: "Texte 1" },
