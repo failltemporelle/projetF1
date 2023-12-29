@@ -1,9 +1,6 @@
 <template>
     <Navbar />
-    <div v-for="text in texts" :key="text.id">
-        <p :class="getColorClass(text.id)">hello</p>
-    </div>
-    <div class="bg-purple-800 text-white rounded-xl">
+        <div class="bg-purple-800 text-white rounded-xl">
         <div class="px-8">
             <div class="flex justify-between items-center">
                 <div class="flex items-center space-x-4">
@@ -82,33 +79,4 @@ const findDriver = (driverId) => {
     if (!f1Standings.value) return null;
     return f1Standings.value.find(driver => driver.Driver.driverId === driverId);
 };
-
-
-onMounted(getPilote); 
-onMounted(async () => {
-    await fetchDriverStandings();
-    var idpilote = getUrl();
-    selectedDriver.value = findDriver(idpilote);
-});
-
-const texts = ref([
-    { id: getUrl(), content: "Texte 1" },
-]);
-
-const getColorClass = (id) => {
-    switch (id) {
-        case 'hamilton':
-            return 'red-text';
-        default:
-            return '';
-    }
-};
 </script>
-
-
-<style>
-.red-text {
-    color: red;
-}
-</style>
-
