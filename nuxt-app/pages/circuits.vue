@@ -1,13 +1,5 @@
 <template>
-
-
     <Navbar />
-
-
-
-
-
-
     <div class="flex flex-row flex-wrap place-content-center">
     <div v-for="item in this.f1.course" class="card w-60 bg-red-700 shadow-xl ml-6 mt-6 ">
         <div class="card w-96 bg-base-100 shadow-xl">
@@ -27,9 +19,6 @@
     </div>
 </template>
 <script>
-
-
-var script = document.createElement('script'); script.dataset.cache = true; script.dataset.websiteId = '6dc26c0f-0d76-46f8-8bb2-14e706229e91'; script.src='https://s.abla.io/abla.js'; document.getElementsByTagName('head')[0].appendChild(script);
 export default {
     created() {
         this.getCircuit();

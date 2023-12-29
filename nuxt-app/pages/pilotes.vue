@@ -32,9 +32,6 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-
-
-
 const f1 = ref({
   points: [],
   pointMax: null,
