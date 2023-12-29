@@ -1,41 +1,50 @@
 <template>
     <Navbar />
-        <div class="bg-purple-800 text-white rounded-xl">
-        <div class="px-8">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-4">
-                    <div class="text-4xl font-bold">{{ f1.pilote.permanentNumber }}</div>
-                </div>
-                <div class="text-right">
-                    <div class="text-sm">12 - 14 July</div>
-                    <div class="text-lg font-bold">Next Grand Prix</div>
-                    <div class="text-2xl font-bold">Great Britain 2019</div>
-                </div>
-            </div>
-            <div class="flex justify-between items-end mt-8">
-                <div class="space-y-4">
-                    <div v-if="selectedDriver">
-                        <div class="text-6xl font-bold">{{ selectedDriver.Constructors[0].name }}</div>
+    <div class="bg-black text-white rounded-xl">
+        <div class="flex justify-between items-center px-8 py-4">
+            <div class="space-y-2">
+                <div class="text-9xl font-bold opacity-10">{{ f1.pilote.permanentNumber }}</div>
+                <div class="flex space-x-4">
+                    <!-- <div>
+                        <div class="text-sm">Grands Prix</div>
+                        <div class="text-3xl font-bold">90</div>
+                    </div> -->
+                    <div>
+                        <div v-if="selectedDriver">
+                        <div class="text-sm">Points</div>
+                        <div class="text-3xl font-bold">{{ selectedDriver.points }}</div>
                     </div>
-                    <div class="flex items-center space-x-4">
-                        <div class="text-8xl font-bold text-yellow-300">{{ f1.pilote.permanentNumber }}</div>
-                        <div>
-                            <div class="text-4xl font-bold">{{ f1.pilote.givenName }} {{ f1.pilote.familyName }}</div>
-                            <div class="text-xl">{{ f1.pilote.nationality }}</div>
-                        </div>
                     </div>
+                    <!-- <div>
+                        <div class="text-sm">Podiums</div>
+                        <div class="text-3xl font-bold">25</div>
+                    </div> -->
                 </div>
             </div>
-            <div class="flex justify-between items-center mt-8">
-                <div class="space-y-2">
-                    <div v-if="selectedDriver">
-                        <div class="text-2xl font-bold">Points: {{ selectedDriver.points }}</div>
-                    </div>
+            <div class="flex flex-col items-end">
+                <div class="text-sm">12 - 14 July</div>
+                <div class="text-2xl font-bold">Next Gran Prix</div>
+                <div class="text-2xl font-bold">Great Britain 2019</div>
+        </div>
+    </div>
+    <div class="flex items-center justify-between px-8 py-4">
+        <div class="flex flex-col">
+            <div v-if="selectedDriver">
+            <h1 class="text-6xl font-bold">{{ selectedDriver.Constructors[0].name }}</h1>
+        </div>
+            <div class="flex items-center space-x-2">
+                <div class="text-6xl font-bold text-red-600">{{ f1.pilote.permanentNumber }}</div>
+                <div>
+                    <h2 class="text-4xl font-bold">{{ f1.pilote.givenName }} {{ f1.pilote.familyName }}</h2>
+                    <p>{{ f1.pilote.nationality }}</p>
                 </div>
             </div>
         </div>
+        <div><img src="../assets/voiture/w14.png" alt="Red Bull Racing Car" class="h-54" width="1200" height="14"
+                style="aspect-ratio: 600 / 300; object-fit: cover;">
+        </div>
     </div>
-</template>
+</div></template>
 
 <script setup>
 import { ref, onMounted } from 'vue';
