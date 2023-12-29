@@ -57,7 +57,7 @@ const getUrl = () => {
 const getPilote = async () => {
     var idPilote = getUrl();
     try {
-        const response = await fetch(`http://ergast.com/api/f1/drivers/${idPilote}.json`);
+        const response = await fetch(`https://ergast.com/api/f1/drivers/${idPilote}.json`);
         const data = await response.json();
         f1.value.pilote = data.MRData.DriverTable.Drivers[0];
     } catch (error) {
@@ -67,7 +67,7 @@ const getPilote = async () => {
 
 const fetchDriverStandings = async () => {
     try {
-        const response = await fetch(`http://ergast.com/api/f1/current/driverStandings.json`);
+        const response = await fetch(`https://ergast.com/api/f1/current/driverStandings.json`);
         const data = await response.json();
         f1Standings.value = data.MRData.StandingsTable.StandingsLists[0].DriverStandings;
     } catch (error) {
