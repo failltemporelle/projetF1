@@ -79,4 +79,13 @@ const findDriver = (driverId) => {
     if (!f1Standings.value) return null;
     return f1Standings.value.find(driver => driver.Driver.driverId === driverId);
 };
+
+
+onMounted(getPilote);
+onMounted(async () => {
+    await fetchDriverStandings();
+    var idpilote = getUrl();
+    selectedDriver.value = findDriver(idpilote);
+});
 </script>
+
