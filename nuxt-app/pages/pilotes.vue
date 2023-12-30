@@ -17,11 +17,9 @@
       </figure>
       <div class="card-body">
         <progress class="progress w-50" :value="item.points" :max="f1.pointMax"></progress>
-        <button class="primary">
-          <NuxtLink :to="`/testt/${item.Driver.driverId}`">
-            <span class="text-sm font-medium hover:underline underline-offset-4">Pilotes</span>
-          </NuxtLink>
-        </button>
+        <button class="btn btn-sm"> <NuxtLink :to="`/testt/${item.Driver.driverId}`">
+            <span class="text-sm font-medium hover:underline underline-offset-4 text-xs">Informations</span>
+          </NuxtLink></button>
       </div>
     </div>
   </div>
