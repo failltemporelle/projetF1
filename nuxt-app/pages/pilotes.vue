@@ -2,27 +2,27 @@
   <navbar />
   <slot />
   <h1 class="text-center">Liste des pilotes</h1>
+
   <div class="flex flex-row flex-wrap place-content-center">
-    <div v-for="item in f1.points" :key="item.Driver.driverId" class="card w-60 bg-red-700 shadow-xl ml-6 mt-6">
-      <div class="items-center text-center">
+    <div class="p-4" v-for="item in f1.points" :key="item.Driver.driverId">
+      <div class="rounded-lg border bg-card text-card-foreground shadow-lg" data-v0-t="card">
+        <div class="items-center text-center">
         <span class="indicator indicator-item badge badge-primary text-teal-50 content-start">
           {{ item.points }} Points
         </span>
       </div>
-      <div class="card-body items-center text-center min-height: 0px;">
-        <h2 class="card-title text-white">{{ item.Driver.givenName }} {{ item.Driver.familyName }}</h2>
-      </div>
-      <figure>
-        <img :src="getUrl(item.Driver.driverId)" alt="Image du pilote">
-      </figure>
-      <div class="card-body">
-        <progress class="progress w-50" :value="item.points" :max="f1.pointMax"></progress>
-        <button class="btn btn-sm"> <NuxtLink :to="`/testt/${item.Driver.driverId}`">
+        <div class="flex flex-col space-y-1.5 p-6 items-center text-center">
+          <p class="card-title mb-2">{{ item.Driver.givenName }} {{ item.Driver.familyName }}</p>
+          <img :src="getUrl(item.Driver.driverId)" alt="Image du pilote" class="mx-auto" width="200" height="100">
+          <progress class="progress w-50" :value="item.points" :max="f1.pointMax"></progress>
+          <button class="btn btn-sm"> <NuxtLink :to="`/testt/${item.Driver.driverId}`">
             <span class="text-sm font-medium hover:underline underline-offset-4 text-xs">Informations</span>
           </NuxtLink></button>
+            </div>
       </div>
     </div>
   </div>
+  <Footer />
 </template>
 
 

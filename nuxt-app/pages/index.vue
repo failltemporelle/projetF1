@@ -22,4 +22,5 @@
       </div>
     </section>
   </main>
+  <Footer />
 </template>

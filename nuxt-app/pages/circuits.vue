@@ -17,6 +17,7 @@
             </div>
         </div>
     </div>
+    <Footer />
 </template>
 <script>
 export default {

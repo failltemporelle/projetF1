@@ -44,7 +44,9 @@
                 style="aspect-ratio: 600 / 300; object-fit: cover;">
         </div>
     </div>
-</div></template>
+</div>
+<Footer />
+</template>
 
 <script setup>
 import { ref, onMounted } from 'vue';
