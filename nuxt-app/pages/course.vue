@@ -10,9 +10,7 @@
       </div>
       <div class="p-6 grid gap-4 border-y py-4">
         <p class="text-sm/relaxed">Location: {{ item.raceName }}</p>
-        <div v-for="item in this.f1.first">
-        <p class="text-4xl tracking-widest">Winner: Lewis Hamilton {{ item.givenName  }}</p>
-    </div>
+        <p class="text-4xl tracking-widest">Winner: {{f1.pilote.givenName}} {{ f1.pilote.familyName }}</p>
       </div>
     </div>
   </section>
@@ -26,43 +24,12 @@
             {{ item.Constructor.name }}
           </label>
           <p class="text-sm text-gray-500 dark:text-gray-400">Start: {{item.grid}}, Finish: {{ item.position }} Status : {{ item.status }} </p>
+          <p> tour : {{item.FastestLap.AverageSpeed.speed}} {{item.FastestLap.AverageSpeed.units}}  </p>
         </div>
       </div>
     </div>
-
   </section>
 </main>
-
-
-
-    <div class="flex flex-row flex-wrap place-content-center">
-        <div v-for="item in this.f1.course" class="card w-60 bg-red-700 shadow-xl ml-6 mt-6">
-            <div class="card-body">
-                <p> {{ item.raceName }}</p>
-                <p> {{ item.date }}</p>
-                <p> {{ item.round }}</p>
-                <p> {{ item.season }}</p>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="flex flex-row flex-wrap place-content-center">
-        <div v-for="item in this.f1.classement" class="card w-60 bg-red-700 shadow-xl ml-6 mt-6">
-            <span class="indicator-item badge badge-primary text-teal-50 content-end"> Arrivé : {{ item.position }} Départ : {{item.grid}} </span>
-            <div class="card-body">
-                <p> {{ item.Constructor.name }}</p>
-                <p class="font-bold"> {{ item.Driver.givenName }} {{ item.Driver.familyName }}</p>
-                <p> {{ item.status }}</p> 
-                <!-- <p> tour : {{item.FastestLap[0].lap}} </p>
-                <p> tour : {{ item.FastestLap.lap }}</p> -->
-                <!-- <p> Rank : {{ item.FastestLap.rank }}</p>
-                <p> Time : {{ item.FastestLap.Time.time }}</p>
-                <p> Average Speed : {{ item.FastestLap.AverageSpeed.speed }} {{item.FastestLap.AverageSpeed.units}}</p> -->
-
-            </div>
-        </div>
-    </div>
 </template>
 
 <script>
@@ -74,6 +41,7 @@ export default {
       course: [],
       classement: [],
       first: null,
+      pilote: {},
     });
 
     const getCourse = async () => {
@@ -84,13 +52,12 @@ export default {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        f1.value.course = data.MRData.RaceTable.Races;
+        f1.value.course =     data.MRData.RaceTable.Races;
         f1.value.classement = data.MRData.RaceTable.Races[0].Results;
-        f1.value.first = data.MRData.RaceTable.Races[0].Results[0].Driver;
+        f1.value.pilote =     data.MRData.RaceTable.Races[0].Results[0].Driver;
         // Logs pour déboguer
         console.log(f1.value.classement);
-        console.log(f1.value.course);
-        console.log(f1.value.first);
+
       } catch (e) {
         console.error("Failed to fetch course data", e);
       }
