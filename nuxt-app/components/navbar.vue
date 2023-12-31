@@ -10,6 +10,7 @@
     <NuxtLink to="/pilotes" class="text-sm font-medium hover:underline underline-offset-4">Pilotes</NuxtLink>
     <NuxtLink to="/ecurie" class="text-sm font-medium hover:underline underline-offset-4">Ecuries</NuxtLink>
     <NuxtLink to="/course" class="text-sm font-medium hover:underline underline-offset-4">Dernière Courses</NuxtLink>
+    <NuxtLink to="/calendar" class="text-sm font-medium hover:underline underline-offset-4">Calendrier</NuxtLink>
   </nav>
 </header>
 </template>

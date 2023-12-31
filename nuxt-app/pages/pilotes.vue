@@ -1,20 +1,20 @@
 <template>
   <navbar />
   <slot />
-  <h1 class="text-center">Liste des pilotes</h1>
 
+  <h1 class="text-center">Liste des pilotes</h1>
   <div class="flex flex-row flex-wrap place-content-center">
     <div class="p-4" v-for="item in f1.points" :key="item.Driver.driverId">
-      <div class="rounded-lg border bg-card text-card-foreground shadow-lg" data-v0-t="card">
+      <div class="rounded-lg border bg-card text-card-foreground shadow-lg bg-secondary" data-v0-t="card">
         <div class="items-center text-center">
         <span class="indicator indicator-item badge badge-primary text-teal-50 content-start">
           {{ item.points }} Points
         </span>
       </div>
         <div class="flex flex-col space-y-1.5 p-6 items-center text-center">
-          <p class="card-title mb-2">{{ item.Driver.givenName }} {{ item.Driver.familyName }}</p>
+          <p class="card-title mb-2 text-neutral-content ">{{ item.Driver.givenName }} {{ item.Driver.familyName }}</p>
           <img :src="getUrl(item.Driver.driverId)" alt="Image du pilote" class="mx-auto" width="200" height="100">
-          <progress class="progress w-50" :value="item.points" :max="f1.pointMax"></progress>
+          <progress class="progress w-50 bg-primary" :value="item.points" :max="f1.pointMax"></progress>
           <button class="btn btn-sm"> <NuxtLink :to="`/testt/${item.Driver.driverId}`">
             <span class="text-sm font-medium hover:underline underline-offset-4 text-xs">Informations</span>
           </NuxtLink></button>
