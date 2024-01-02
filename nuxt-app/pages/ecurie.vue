@@ -5,7 +5,7 @@
       <div class="rounded-lg border bg-card text-card-foreground shadow-lg bg-secondary" data-v0-t="card">
         <div class="flex flex-col space-y-1.5 p-6">
           <h3 class="text-2xl font-semibold text-gray-600">{{ item.points }} Points</h3>
-          <p class="text-md font-light mb-2">{{ item.Constructor.name }}</p>
+          <p class="text-md font-light mb-2 font-bold">{{ item.Constructor.name }}</p>
             <img
             :src="`https://raw.githubusercontent.com/failltemporelle/projetF1/main/nuxt-app/assets/ecuries/${item.Constructor.constructorId}.png`" class="mx-auto" width="200" height="100">
         </div>

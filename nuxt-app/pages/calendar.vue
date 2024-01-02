@@ -1,15 +1,19 @@
 <template>
     <Navbar />
-
-    <div v-for="item in this.f1.race" class="p-6">
-     <p>{{ item.date }}</p>
-     <p>{{ item.round }}</p>
-     <p>{{ item.Circuit.circuitName }}</p>
-     <p>{{ item.Circuit.Location.country }} {{ item.Circuit.Location.locality }}</p>
-     <br>
-    
-    
+    <section class="grid grid-cols-3 gap-4 p-6">
+    <div v-for="item in this.f1.race"  class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
+      <div class="grid gap-2 p-4">
+        <label class="text-s color-black font-bold">Date : {{ item.date }}</label>
+        <div class="space-y-1 leading-none">
+          <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 font-bold">
+            <p>Rang : {{ item.round }}</p>
+          </label>
+          <p>Circuit : {{ item.Circuit.circuitName }}</p>
+          <p class="text-sm text-gray-500 dark:text-gray-400"> Localisation: {{ item.Circuit.Location.country }} {{ item.Circuit.Location.locality }}</p>
+        </div>
+      </div>
     </div>
+  </section>
     <Footer />
 </template>
 
@@ -28,17 +32,13 @@ export default {
 
     const getCourse = async () => {
       try {
-        const response = await fetch("http://ergast.com/api/f1/2024.json");
+        const response = await fetch("https://ergast.com/api/f1/2024.json");
         if (!response.ok) {
           // Gère les réponses HTTP non-200
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
         f1.value.race = data.MRData.RaceTable.Races;
-        // f1.value.course =     data.MRData.RaceTable.Races;
-        // f1.value.classement = data.MRData.RaceTable.Races[0].Results;
-        // f1.value.pilote =     data.MRData.RaceTable.Races[0].Results[0].Driver;
-        // console.log(f1.value.classement);
         console.log(data);
 
       } catch (e) {

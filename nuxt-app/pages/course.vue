@@ -9,22 +9,21 @@
         <p class="text-sm text-muted-foreground">Date: {{ item.date }}</p>
       </div>
       <div class="p-6 grid gap-4 border-y py-4">
-        <p class="text-sm/relaxed">Location: {{ item.raceName }}</p>
-        <p class="text-4xl tracking-widest">Winner: {{f1.pilote.givenName}} {{ f1.pilote.familyName }}</p>
+        <p class="text-sm/relaxed">Localisation: {{ item.raceName }}</p>
+        <p class="text-4xl tracking-widest">Gagnant: {{f1.pilote.givenName}} {{ f1.pilote.familyName }}</p>
       </div>
     </div>
   </section>
   <section class="grid grid-cols-3 gap-4">
-
     <div v-for="item in this.f1.classement"  class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
       <div class="grid gap-2 p-4">
-        <label class="text-sm color-black">{{ item.Driver.givenName }} {{ item.Driver.familyName }}</label>
+        <label class="text-s color-black font-bold">{{ item.Driver.givenName }} {{ item.Driver.familyName }}</label>
         <div class="space-y-1 leading-none">
-          <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+          <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 font-bold">
             {{ item.Constructor.name }}
           </label>
+          <p> Tour : {{item.FastestLap.AverageSpeed.speed}} {{item.FastestLap.AverageSpeed.units}}  </p>
           <p class="text-sm text-gray-500 dark:text-gray-400">Start: {{item.grid}}, Finish: {{ item.position }} Status : {{ item.status }} </p>
-          <p> tour : {{item.FastestLap.AverageSpeed.speed}} {{item.FastestLap.AverageSpeed.units}}  </p>
         </div>
       </div>
     </div>
