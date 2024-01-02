@@ -7,12 +7,12 @@
     <div class="p-4" v-for="item in f1.points" :key="item.Driver.driverId">
       <div class="rounded-lg border bg-card text-card-foreground shadow-lg bg-secondary" data-v0-t="card">
         <div class="items-center text-center">
-        <span class="indicator indicator-item badge badge-primary text-teal-50 content-start">
+        <span class="indicator indicator-item badge badge-base-100 text-primary-content font-bold">
           {{ item.points }} Points
         </span>
       </div>
         <div class="flex flex-col space-y-1.5 p-6 items-center text-center">
-          <p class="card-title mb-2 text-neutral-content ">{{ item.Driver.givenName }} {{ item.Driver.familyName }}</p>
+          <p class="card-title mb-2 text-primary-content ">{{ item.Driver.givenName }} {{ item.Driver.familyName }}</p>
           <img :src="getUrl(item.Driver.driverId)" alt="Image du pilote" class="mx-auto" width="200" height="100">
           <progress class="progress w-50 bg-accent" :value="item.points" :max="f1.pointMax"></progress>
           <button class="btn btn-sm"> <NuxtLink :to="`/testt/${item.Driver.driverId}`">

@@ -36,7 +36,7 @@ export default {
     methods: {
         getCircuit() {
             this.f1.course = [];
-            fetch("https://ergast.com/api/f1/2023/circuits.json")
+            fetch("https://ergast.com/api/f1/2024/circuits.json")
                 .then((response) => response.json())
                 .then((data) => {
                     this.f1.course = data.MRData.CircuitTable.Circuits;
