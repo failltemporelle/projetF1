@@ -1,7 +1,7 @@
 <template>
     <Navbar />
     <section class="grid grid-cols-3 gap-4 p-6">
-    <div v-for="item in this.f1.race"  class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
+    <div v-for="item in this.f1.race"  class="rounded-lg border bg-card text-card-foreground shadow-sm bg-secondary" data-v0-t="card">
       <div class="grid gap-2 p-4">
         <label class="text-s color-black font-bold">Date : {{ item.date }}</label>
         <div class="space-y-1 leading-none">

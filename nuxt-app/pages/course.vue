@@ -15,7 +15,7 @@
     </div>
   </section>
   <section class="grid grid-cols-3 gap-4">
-    <div v-for="item in this.f1.classement"  class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
+    <div v-for="item in this.f1.classement"  class="rounded-lg border bg-card text-card-foreground shadow-sm bg-secondary" data-v0-t="card">
       <div class="grid gap-2 p-4">
         <label class="text-s color-black font-bold">{{ item.Driver.givenName }} {{ item.Driver.familyName }}</label>
         <div class="space-y-1 leading-none">
