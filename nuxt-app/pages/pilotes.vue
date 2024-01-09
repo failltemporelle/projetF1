@@ -4,8 +4,8 @@
 
   <h1 class="text-center">Liste des pilotes</h1>
   <div class="flex flex-row flex-wrap place-content-center">
-    <div class="p-4" v-for="item in f1.points" :key="item.Driver.driverId">
-      <div class="rounded-lg border bg-card text-card-foreground shadow-lg bg-secondary" data-v0-t="card">
+    <div class="p-4 " v-for="item in f1.points" :key="item.Driver.driverId">
+      <div class="rounded-lg bg-card text-card-foreground bg-secondary card hover:shadow-lg transition-shadow" data-v0-t="card">
         <div class="items-center text-center">
         <span class="indicator indicator-item badge badge-base-100 text-primary-content font-bold">
           {{ item.points }} Points
@@ -51,11 +51,13 @@ onMounted(getPoints);
 
 
 <style> .card {
-   background-color: #21D4FD;
-   background-image: -webkit-linear-gradient(19deg, #fd1504 0%, #1b1c1c 100%);
-   background-image: -moz-linear-gradient(19deg, #fd1504 0%, #1b1c1c 100%);
-   background-image: -o-linear-gradient(19deg, #fd1504 0%, #1b1c1c 100%);
-   background-image: linear-gradient(19deg, #fd1504 0%, #1b1c1c 100%);
+   /* background-color: #f0f2ce;
+background-image: linear-gradient(0deg, #f0f2ce 0%, #c4e4ce 100%); */
+background-color: #e4d8b4;
+background-image: linear-gradient(0deg, #e4d8b4 0%, #c4e4ce 100%);
+
+
+
  }
 
  .img {
