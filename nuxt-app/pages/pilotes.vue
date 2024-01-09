@@ -13,7 +13,7 @@
       </div>
         <div class="flex flex-col space-y-1.5 p-6 items-center text-center">
           <p class="card-title mb-2 text-primary-content ">{{ item.Driver.givenName }} {{ item.Driver.familyName }}</p>
-          <img :src="`_nuxt/assets/pilotes/${item.Driver.driverId}.png`" alt="Image du pilote" class="mx-auto" width="200" height="100">
+          <img :src="getUrl(item.Driver.driverId)" alt="Image du pilote" class="mx-auto" width="200" height="100">
           <progress class="progress w-50 bg-accent" :value="item.points" :max="f1.pointMax"></progress>
           <button class="btn btn-sm"> <NuxtLink :to="`/testt/${item.Driver.driverId}`">
             <span class="text-sm font-medium hover:underline underline-offset-4 text-xs">Informations</span>
@@ -34,7 +34,9 @@ const f1 = ref({
   points: [],
   pointMax: null,
 });
-
+const getUrl = (item) => {
+  return new URL(`https://raw.githubusercontent.com/failltemporelle/projetF1/main/nuxt-app/assets/pilotes/` + item + `.png`, import.meta.url).href;
+};
 const getPoints = async () => {
   try {
     const response = await fetch("https://ergast.com/api/f1/2023/driverStandings.json");
