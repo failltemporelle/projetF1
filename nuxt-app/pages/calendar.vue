@@ -1,7 +1,7 @@
 <template>
     <Navbar />
     <section class="grid grid-cols-3 gap-4 p-6">
-    <div v-for="item in this.f1.race"  class="rounded-lg border bg-card text-card-foreground shadow-sm bg-secondary" data-v0-t="card">
+    <div v-for="item in this.f1.race"  class="card hover:shadow-lg transition-shadow rounded-lg bg-card text-card-foreground bg-secondary" data-v0-t="card">
       <div class="grid gap-2 p-4">
         <label class="text-s color-black font-bold">Date : {{ item.date }}</label>
         <div class="space-y-1 leading-none">
@@ -51,8 +51,15 @@ export default {
     return { f1 };
   },
 };
-
-
-
-
 </script>
+
+<style> .card {
+  /* background-color: #f0f2ce;
+background-image: linear-gradient(0deg, #f0f2ce 0%, #c4e4ce 100%); */
+  background-color: #e4d8b4;
+  background-image: linear-gradient(0deg, #e4d8b4 0%, #c4e4ce 100%);
+
+
+
+}
+</style>

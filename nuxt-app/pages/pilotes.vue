@@ -13,7 +13,7 @@
       </div>
         <div class="flex flex-col space-y-1.5 p-6 items-center text-center">
           <p class="card-title mb-2 text-primary-content ">{{ item.Driver.givenName }} {{ item.Driver.familyName }}</p>
-          <img :src="getUrl(item.Driver.driverId)" alt="Image du pilote" class="mx-auto" width="200" height="100">
+          <img :src="getUrl(item.Driver.driverId)" alt="Image du pilote" class="mx-auto lg:block hidden" width="200" height="100">
           <progress class="progress w-50 bg-accent" :value="item.points" :max="f1.pointMax"></progress>
           <button class="btn btn-sm"> <NuxtLink :to="`/testt/${item.Driver.driverId}`">
             <span class="text-sm font-medium hover:underline underline-offset-4 text-xs">Informations</span>

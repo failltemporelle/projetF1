@@ -2,7 +2,7 @@
   <navbar />
   <div class="flex flex-row flex-wrap place-content-center">
     <div class="p-4" v-for="item in this.f1.ecuries">
-      <div class="rounded-lg bg-card text-card-foreground bg-secondary card card hover:shadow-lg transition-shadow"
+      <div class="rounded-lg bg-card text-card-foreground bg-secondary card hover:shadow-lg transition-shadow"
         data-v0-t="card">
 
         <div class="items-center text-center">
