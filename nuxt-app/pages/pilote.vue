@@ -1,6 +1,6 @@
 <template>
     <Navbar />
-    <div class="bg-secondary text-primary-content rounded-xl">
+    <div class="bg-secondary text-primary-content rounded-xl card hover:shadow-lg transition-shadow p-6 m-6">
         <div class="flex justify-between items-center px-8 py-4">
             <div class="space-y-2">
                 <div class="text-9xl font-bold opacity-10 text-primary-content">{{ f1.pilote.permanentNumber }}</div>
@@ -32,7 +32,7 @@
                 </div>
             </div>
         </div>
-        <div class="rounded-xl bg-primary"><img :src="getUrl2(f1.pilote.driverId)" width="400">
+        <div class="rounded-xl bg-primary card hover:shadow-lg transition-shadow"><img :src="getUrl2(f1.pilote.driverId)" width="400">
         </div>
     </div>
 </div>
@@ -99,3 +99,20 @@ onMounted(async () => {
 
 </script>
 
+
+<style> .card {
+    /* background-color: #f0f2ce;
+ background-image: linear-gradient(0deg, #f0f2ce 0%, #c4e4ce 100%); */
+ background-color: #e4d8b4;
+ background-image: linear-gradient(0deg, #e4d8b4 0%, #c4e4ce 100%);
+ 
+ 
+ 
+  }
+ 
+  .img {
+    border-radius: 10px;
+    border-color: #1b1c1c;
+  }
+ </style>
+ 
