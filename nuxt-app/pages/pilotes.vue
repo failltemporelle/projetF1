@@ -7,9 +7,13 @@
     <div class="p-4 " v-for="item in f1.points" :key="item.Driver.driverId">
       <div class="rounded-lg bg-card text-card-foreground bg-secondary card hover:shadow-lg transition-shadow" data-v0-t="card">
         <div class="items-center text-center">
+          <span class="indicator indicator-item badge badge-base-100 text-primary-content font-bold m-2">
+          {{ item.position }}
+        </span>
         <span class="indicator indicator-item badge badge-base-100 text-primary-content font-bold">
           {{ item.points }} Points
         </span>
+        
       </div>
         <div class="flex flex-col space-y-1.5 p-6 items-center text-center">
           <p class="card-title mb-2 text-primary-content ">{{ item.Driver.givenName }} {{ item.Driver.familyName }}</p>
@@ -43,6 +47,7 @@ const getPoints = async () => {
     const data = await response.json();
     f1.value.points = data.MRData.StandingsTable.StandingsLists[0].DriverStandings;
     f1.value.pointMax = data.MRData.StandingsTable.StandingsLists[0].DriverStandings[0].points;
+    console.log(f1.value.points);
   } catch (error) {
     console.error('Erreur lors de la récupération des données :', error);
   }

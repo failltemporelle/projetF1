@@ -1,8 +1,8 @@
 <template>
-    <footer class="w-full bg-gray-900 text-white py-8 px-6">
+    <footer class="w-full bg-base-100 text-black py-8 px-6">
   <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
     <div class="flex space-x-6">
-      <button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 underline-offset-4 hover:underline h-10 px-4 py-2 text-white">
+      <button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 underline-offset-4 hover:underline h-10 px-4 py-2 text-black">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -19,7 +19,7 @@
         </svg>
         <span class="sr-only">Facebook</span>
       </button>
-      <button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 underline-offset-4 hover:underline h-10 px-4 py-2 text-white">
+      <button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 underline-offset-4 hover:underline h-10 px-4 py-2 text-black">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -36,7 +36,7 @@
         </svg>
         <span class="sr-only">Twitter</span>
       </button>
-      <button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 underline-offset-4 hover:underline h-10 px-4 py-2 text-white">
+      <button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 underline-offset-4 hover:underline h-10 px-4 py-2 text-black">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -57,13 +57,13 @@
       </button>
     </div>
     <div class="mt-6 md:mt-0">
-      <p class="text-sm text-center md:text-left">© F1 Project. All rights reserved.</p>
+      <p class="text-sm text-center md:text-left text-black">© F1 Project. All rights reserved.</p>
     </div>
     <div class="flex space-x-4 mt-6 md:mt-0">
-      <a class="text-sm text-white hover:underline" href="#">
+      <a class="text-sm text-black hover:underline" href="#">
         Privacy Policy
       </a>
-      <a class="text-sm text-white hover:underline" href="#">
+      <a class="text-sm text-black hover:underline" href="#">
         Terms and Conditions
       </a>
     </div>
