@@ -12,6 +12,7 @@
     <NuxtLink to="/course" class="text-sm font-medium hover:underline underline-offset-4">Dernière Courses</NuxtLink>
     <NuxtLink to="/calendar" class="text-sm font-medium hover:underline underline-offset-4">Calendrier</NuxtLink>
     <NuxtLink to="/SignUp" class="text-sm font-medium hover:underline underline-offset-4">S'inscrire</NuxtLink>
+    <NuxtLink to="/Stats" class="text-sm font-medium hover:underline underline-offset-4">Stats</NuxtLink>
   </nav>
 </header>
 </template>

@@ -14,9 +14,11 @@
           <p class="card-title mb-2 text-primary-content">{{ item.Constructor.name }}</p>
           <img
             :src="`https://raw.githubusercontent.com/failltemporelle/projetF1/main/nuxt-app/assets/ecuries/${item.Constructor.constructorId}.png`" class="mx-auto" width="200" height="100">
-        
         </div>
       </div>
+      <button class="btn btn-sm"> <NuxtLink :to="`/ecurieDetails/${item.Constructor.constructorId}`">
+            <span class="text-sm font-medium hover:underline underline-offset-4 text-xs button">Informations</span>
+          </NuxtLink></button>
     </div>
   </div>
   <Footer />

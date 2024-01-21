@@ -3,21 +3,7 @@
     <div class="bg-secondary text-primary-content rounded-xl card hover:shadow-lg transition-shadow p-6 m-6">
         <div class="flex justify-between items-center px-8 py-4">
             <div class="space-y-2">
-                <!-- <div class="text-9xl font-bold opacity-10 text-primary-content">{{ f1.pilote.permanentNumber }}</div> -->
-                <!-- <div class="flex space-x-4">
-                    <div>
-                        <div v-if="selectedDriver">
-                        <div class="text-sm">Points</div>
-                        <div class="text-3xl font-bold primary-content">{{ selectedDriver.points }}</div>
-                    </div>
-                    </div>
-                </div> -->
             </div>
-            <!-- <div class="flex flex-col items-end">
-                <div class="text-sm">12/12/2023</div>
-                <div class="text-2xl font-bold">Next Gran Prix</div>
-                <div class="text-2xl font-bold">Chine</div>
-        </div> -->
     </div>
     <div class="flex items-center justify-between px-8 py-4">
         <div class="flex flex-col">
@@ -36,13 +22,9 @@
         </div>
     </div>
 </div>
-<!-- <div v-if="isLoading" class="spinner"></div>
-    <div v-else> -->
         <div class="bg-secondary text-primary-content rounded-xl card hover:shadow-lg transition-shadow p-6 m-6">
     <canvas ref="canvas"></canvas>
   </div>
-    <!-- </div> -->
-
 <Footer />
 </template>
 
@@ -108,7 +90,6 @@ const f1 = ref({
 });
 
 const getUrl2 = (item) => {
-    console.log(item);
   return new URL(`https://raw.githubusercontent.com/failltemporelle/projetF1/main/nuxt-app/assets/pilotes/` + item + `.png`, import.meta.url).href;
 };
 
@@ -125,7 +106,6 @@ const getPilote = async () => {
         const response = await fetch(`https://ergast.com/api/f1/drivers/${idPilote}.json`);
         const data = await response.json();
         f1.value.pilote = data.MRData.DriverTable.Drivers[0];
-        console.log(f1.value.pilote);
     } catch (error) {
         console.error('Erreur lors de la récupération des données :', error);
     }
