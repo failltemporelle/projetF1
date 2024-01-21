@@ -3,21 +3,21 @@
     <div class="bg-secondary text-primary-content rounded-xl card hover:shadow-lg transition-shadow p-6 m-6">
         <div class="flex justify-between items-center px-8 py-4">
             <div class="space-y-2">
-                <div class="text-9xl font-bold opacity-10 text-primary-content">{{ f1.pilote.permanentNumber }}</div>
-                <div class="flex space-x-4">
+                <!-- <div class="text-9xl font-bold opacity-10 text-primary-content">{{ f1.pilote.permanentNumber }}</div> -->
+                <!-- <div class="flex space-x-4">
                     <div>
                         <div v-if="selectedDriver">
                         <div class="text-sm">Points</div>
                         <div class="text-3xl font-bold primary-content">{{ selectedDriver.points }}</div>
                     </div>
                     </div>
-                </div>
+                </div> -->
             </div>
-            <div class="flex flex-col items-end">
+            <!-- <div class="flex flex-col items-end">
                 <div class="text-sm">12/12/2023</div>
                 <div class="text-2xl font-bold">Next Gran Prix</div>
                 <div class="text-2xl font-bold">Chine</div>
-        </div>
+        </div> -->
     </div>
     <div class="flex items-center justify-between px-8 py-4">
         <div class="flex flex-col">
@@ -36,14 +36,71 @@
         </div>
     </div>
 </div>
+<!-- <div v-if="isLoading" class="spinner"></div>
+    <div v-else> -->
+        <div class="bg-secondary text-primary-content rounded-xl card hover:shadow-lg transition-shadow p-6 m-6">
+    <canvas ref="canvas"></canvas>
+  </div>
+    <!-- </div> -->
+
 <Footer />
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { Chart, registerables } from 'chart.js';
+import { ref, onMounted, watch } from 'vue';
+
+Chart.register(...registerables);
 
 const f1Standings = ref(null);
 const selectedDriver = ref(null);
+const dataPoints = ref([]);
+const canvas = ref(null);
+const chart = ref(null);
+
+const fetchData = async () => {
+    var idPilote = getUrl();
+  try {
+    const response = await fetch(`https://ergast.com/api/f1/drivers/${idPilote}/driverStandings.json`);
+    const data = await response.json();
+    const standings = data.MRData.StandingsTable.StandingsLists;
+    const pointsPerSeason = standings.map(s => ({
+      year: s.season,
+      points: parseInt(s.DriverStandings[0].points)
+    }));
+    dataPoints.value = pointsPerSeason;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+};
+watch(dataPoints, (newData) => {
+  if (chart.value) {
+    chart.value.destroy();
+  }
+  chart.value = new Chart(canvas.value.getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: newData.map(item => item.year),
+      datasets: [{
+        label: 'Points par saison',
+        data: newData.map(item => item.points),
+        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderRadius: 5,
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+});
+
+
 
 const f1 = ref({
     pilote: {},
@@ -88,7 +145,9 @@ const findDriver = (driverId) => {
     if (!f1Standings.value) return null;
     return f1Standings.value.find(driver => driver.Driver.driverId === driverId);
 };
-
+onMounted(() => {
+  fetchData();
+});
 onMounted(getUrl2);
 onMounted(getPilote);
 onMounted(async () => {
@@ -101,13 +160,8 @@ onMounted(async () => {
 
 
 <style> .card {
-    /* background-color: #f0f2ce;
- background-image: linear-gradient(0deg, #f0f2ce 0%, #c4e4ce 100%); */
  background-color: #e4d8b4;
  background-image: linear-gradient(0deg, #e4d8b4 0%, #c4e4ce 100%);
- 
- 
- 
   }
  
   .img {
