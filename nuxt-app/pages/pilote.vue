@@ -24,7 +24,7 @@
       </div>
     </div>
   </div>
-  <div class="bg-secondary text-primary-content rounded-xl card hover:shadow-lg transition-shadow p-6 m-6">
+  <div class="bg-secondary text-primary-content rounded-xl card hover:shadow-lg transition-shadow p-16 m-12 width:23px">
     <canvas ref="canvas"></canvas>
   </div>
   <Footer />
@@ -125,24 +125,40 @@ const fetchDriverStandings = async () => {
 
 function numberColorClass(number) {
   console.log(number);
-  if (number == "max_verstappen" || number == "perez" || number == "leclerc" || number == "sainz" ){
-    return "text-red-700 bg-blue-500 rounded-sm";
+  if (number == "max_verstappen" || number == "perez" ){
+    return "text-red-700 bg-blue-500 rounded-xl";
   }
   if (number == "hamilton"){
     return "text-yellow-300 bg-violet-600 rounded-xl";
   }
   if (number == "alonso" || number == "stroll"){
-    return "text-green-800";
+    return "text-green-800 bg-slate-900 rounded-xl";
   }
   if (number == "norris" || number == "piastri"){
     return "text-orange-600";
   }
   if (number == "russell"){
-    return "text-blue-500";
+    return "text-blue-500 bg-neutral-900 rounded-xl";
   }
   if (number == "ocon" || number == "gasly"){
-    return "text-pink-300";
+    return "text-pink-300 bg-sky-500 rounded-xl";
   }
+  if (number == "leclerc" || number == "sainz"){
+    return "text-red-700 bg-neutral-900 rounded-xl";
+  } 
+  if (number == "albon" || number == "sargeant"){
+    return "text-blue-500 bg-orange-600 rounded-xl";
+  }
+  if (number == "tsunoda" || number == "ricciardo" || number == "lawson" || number=="de_vries"){
+    return "text-gray-400 bg-gray-100 rounded-xl";
+  }
+  if (number == "bottas" || number == "zhou"){
+    return "text-gray-100 bg-red-600 rounded-xl";
+  }
+  if (number == "kevin_magnussen" || number == "hulkenberg"){
+    return "text-red-600 bg-gray-100 rounded-xl";
+  }
+
 }
 
 const findDriver = (driverId) => {
@@ -163,7 +179,7 @@ onMounted(async () => {
 </script>
 
 
-<style> .card {
+<!-- <style> .card {
    background-color: #e4d8b4;
    background-image: linear-gradient(0deg, #e4d8b4 0%, #c4e4ce 100%);
  }
@@ -172,7 +188,7 @@ onMounted(async () => {
    border-radius: 10px;
    border-color: #1b1c1c;
  }
-</style>
+</style> -->
  
 
 
