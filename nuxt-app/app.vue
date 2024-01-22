@@ -6,13 +6,3 @@
   </NuxtLayout>
   </html>
 </template>
-
-
-<script>
-
-
-
-
-
-
-</script>

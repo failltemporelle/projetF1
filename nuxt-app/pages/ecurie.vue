@@ -52,15 +52,7 @@ export default {
   },
 };
 </script>
-<style> .card {
-   /* background-color: #f0f2ce;
-background-image: linear-gradient(0deg, #f0f2ce 0%, #c4e4ce 100%); */
-   background-color: #e4d8b4;
-   background-image: linear-gradient(0deg, #e4d8b4 0%, #c4e4ce 100%);
-
-
-
- }
+<style> 
 
  img {
    border-radius: 10px;

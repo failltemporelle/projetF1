@@ -1,6 +1,6 @@
 <template>
     <navbar/>
-    <div class="bg-secondary text-primary-content rounded-xl card hover:shadow-lg transition-shadow p-6 m-6">
+    <div class="bg-secondary text-primary-content rounded-xl card hover:shadow-lg transition-shadow p-6 m-6 bg-base-100">
         <canvas id="pointsChart"></canvas>
     </div>
     <Footer />
@@ -30,7 +30,7 @@ const createChart = () => {
         data: {
             labels: driverStandings.value.map(driver => driver.Driver.familyName),
             datasets: [{
-                label: 'Points',
+                label: 'Points par pilote',
                 data: driverStandings.value.map(driver => parseInt(driver.points)), // Assurez-vous que les points sont des entiers
                 backgroundColor: 'rgba(54, 162, 235, 0.2)',
                 borderColor: 'rgba(54, 162, 235, 1)',
