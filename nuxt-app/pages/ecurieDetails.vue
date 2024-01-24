@@ -54,7 +54,7 @@ const getUrl = () => {
 const getPilote = async () => {
     var idEcurie = getUrl();
     try {
-        const response = await fetch(`http://ergast.com/api/f1/constructors/${idEcurie}.json`);
+        const response = await fetch(`https://ergast.com/api/f1/constructors/${idEcurie}.json`);
         const data = await response.json();
         f1.value.ecurie = data.MRData.ConstructorTable.Constructors[0];
     } catch (error) {
