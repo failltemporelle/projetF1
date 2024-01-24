@@ -19,9 +19,9 @@
     </div>
     
 </div>
-<div class="bg-secondary text-primary-content rounded-xl card hover:shadow-lg transition-shadow p-6 m-6">
+<!-- <div class="bg-secondary text-primary-content rounded-xl card hover:shadow-lg transition-shadow p-6 m-6">
     <ThreeModel/>
-  </div>
+  </div> -->
 <Footer />
 </template>
 
