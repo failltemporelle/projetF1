@@ -17,10 +17,11 @@
         <div class="rounded-xl bg-primary card hover:shadow-lg transition-shadow"><img :src="getUrl2(f1.ecurie.constructorId)" width="400">
         </div>
     </div>
-    <div>
+    
+</div>
+<div class="bg-secondary text-primary-content rounded-xl card hover:shadow-lg transition-shadow p-6 m-6">
     <ThreeModel/>
   </div>
-</div>
 <Footer />
 </template>
 
