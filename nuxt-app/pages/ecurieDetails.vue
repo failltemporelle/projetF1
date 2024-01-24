@@ -15,9 +15,11 @@
             </div>
         </div>
         <div class="rounded-xl bg-primary card hover:shadow-lg transition-shadow"><img :src="getUrl2(f1.ecurie.constructorId)" width="400">
-
         </div>
     </div>
+    <div>
+    <ThreeModel/>
+  </div>
 </div>
 <Footer />
 </template>
@@ -53,9 +55,7 @@ const getPilote = async () => {
     try {
         const response = await fetch(`http://ergast.com/api/f1/constructors/${idEcurie}.json`);
         const data = await response.json();
-        console.log(data);
         f1.value.ecurie = data.MRData.ConstructorTable.Constructors[0];
-        console.log(f1.value.ecurie);
     } catch (error) {
         console.error('Erreur lors de la récupération des données :', error);
     }
