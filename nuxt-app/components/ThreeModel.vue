@@ -45,7 +45,8 @@ function initThreeJS() {
 
     // Chargeur de modèle GLTF
     const loader = new GLTFLoader();
-    const gltfUrl = '/_nuxt/static/scene.gltf';
+    //const gltfUrl = '/_nuxt/static/scene.gltf';
+    const gltfUrl = 'https://raw.githubusercontent.com/failltemporelle/projetF1/main/nuxt-app/static/scene.gltf'
 
     loader.load(gltfUrl, (gltf) => {
         scene.add(gltf.scene);
