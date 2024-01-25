@@ -1,28 +1,33 @@
 <template>
     <Navbar />
+    <div class="flex flex-row flex-wrap place-content-center">
+        <div class="p-4 ">
+            <Mercedes/>
+
+        </div>
+    </div>
     <div class="bg-secondary text-primary-content rounded-xl card hover:shadow-lg transition-shadow p-6 m-6">
         <div class="flex justify-between items-center px-8 py-4">
             <div class="space-y-2">
             </div>
-    </div>
-    <div class="flex items-center justify-between px-8 py-4">
-        <div class="flex flex-col">
-            <div class="flex items-center space-x-2">
-                <div class="text-6xl font-bold text-red-600">{{ f1.ecurie.name }}</div>
-                <div>
-                    <h2 class="text-4xl font-bold">{{ f1.ecurie.nationality }}</h2>
+        </div>
+        <div class="flex items-center justify-between px-8 py-4">
+            <div class="flex flex-col">
+                <div class="flex items-center space-x-2">
+                    <div class="text-6xl font-bold text-red-600">{{ f1.ecurie.name }}</div>
+                    <div>
+                        <h2 class="text-4xl font-bold">{{ f1.ecurie.nationality }}</h2>
+                    </div>
                 </div>
             </div>
+            <div class="rounded-xl bg-primary card hover:shadow-lg transition-shadow"><img
+                    :src="getUrl2(f1.ecurie.constructorId)" width="400">
+            </div>
         </div>
-        <div class="rounded-xl bg-primary card hover:shadow-lg transition-shadow"><img :src="getUrl2(f1.ecurie.constructorId)" width="400">
-        </div>
+
     </div>
-    
-</div>
-<div class="bg-secondary text-primary-content rounded-xl card hover:shadow-lg transition-shadow p-6 m-6">
-    <ThreeModel/>
-  </div>
-<Footer />
+   
+    <Footer />
 </template>
 
 <script setup>
@@ -42,7 +47,7 @@ const f1 = ref({
 });
 
 const getUrl2 = (item) => {
-  return new URL(`https://raw.githubusercontent.com/failltemporelle/projetF1/main/nuxt-app/assets/ecuries/` + item + `.png`, import.meta.url).href;
+    return new URL(`https://raw.githubusercontent.com/failltemporelle/projetF1/main/nuxt-app/assets/ecuries/` + item + `.png`, import.meta.url).href;
 };
 
 const getUrl = () => {
@@ -65,5 +70,13 @@ onMounted(getUrl2);
 onMounted(getPilote);
 
 </script>
+
+
+<!-- <style>
+.model {
+    width: 20%;
+    height: 20%;
+}
+</style> -->
 
  
