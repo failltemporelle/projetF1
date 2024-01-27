@@ -1,11 +1,44 @@
 <template>
     <Navbar />
-    <div class="flex flex-row flex-wrap place-content-center">
-        <div class="p-4 ">
-            <Mercedes/>
 
-        </div>
+    <div v-if="f1.ecurie.name == 'Mercedes'" class="flex flex-row flex-wrap place-content-center">
+        <Mercedes />
     </div>
+
+    <div v-if="f1.ecurie.name == 'Red Bull'" class="flex flex-row flex-wrap place-content-center">
+        <Redbull />
+    </div>
+
+    <div v-if="f1.ecurie.name == 'Ferrari'" class="flex flex-row flex-wrap place-content-center">
+        <Ferrari />
+    </div>
+    <div v-if="f1.ecurie.name == 'Aston Martin'" class="flex flex-row flex-wrap place-content-center">
+        <Aston />
+    </div>
+
+    <div v-if="f1.ecurie.name == 'McLaren'" class="flex flex-row flex-wrap place-content-center">
+        <Mclaren />
+    </div>
+
+    <div v-if="f1.ecurie.name == 'Alpine F1 Team'" class="flex flex-row flex-wrap place-content-center">
+        <Alpine />
+    </div>
+
+    <div v-if="f1.ecurie.name == 'Alfa Romeo'" class="flex flex-row flex-wrap place-content-center">
+        <Alfa />
+    </div>
+    <div v-if="f1.ecurie.name == 'Williams'" class="flex flex-row flex-wrap place-content-center">
+        <Williams/>
+    </div>
+    <div v-if="f1.ecurie.name == 'Haas F1 Team'" class="flex flex-row flex-wrap place-content-center">
+        <Haas/>
+    </div>
+    <div v-if="f1.ecurie.name == 'AlphaTauri'" class="flex flex-row flex-wrap place-content-center">
+        <AlphaTauri />
+    </div>
+
+
+
     <div class="bg-secondary text-primary-content rounded-xl card hover:shadow-lg transition-shadow p-6 m-6">
         <div class="flex justify-between items-center px-8 py-4">
             <div class="space-y-2">
@@ -26,7 +59,7 @@
         </div>
 
     </div>
-   
+
     <Footer />
 </template>
 
@@ -70,13 +103,3 @@ onMounted(getUrl2);
 onMounted(getPilote);
 
 </script>
-
-
-<!-- <style>
-.model {
-    width: 20%;
-    height: 20%;
-}
-</style> -->
-
- 
