@@ -1,6 +1,5 @@
 
 <template>
-    <SpeedInsights />
   <div class="navbar bg-base-100 sticky top-0 z-50">
     <div class="navbar-start">
       <div class="dropdown">
@@ -88,11 +87,3 @@
     </a>
   </div>
 </div></template>
-
-
-<script setup lang="ts">
-
-import { SpeedInsights } from '@vercel/speed-insights/vue';
-
-
-</script>
