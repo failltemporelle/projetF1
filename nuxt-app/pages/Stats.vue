@@ -14,7 +14,7 @@ const driverStandings = ref([]);
 
 const fetchDriverStandings = async () => {
     try {
-        const response = await fetch('https://ergast.com/api/f1/2023/driverStandings.json');
+        const response = await fetch('https://ergast.com/api/f1/2024/driverStandings.json');
         const data = await response.json();
         driverStandings.value = data.MRData.StandingsTable.StandingsLists[0].DriverStandings;
         createChart(); // Créer le graphique après le chargement des données

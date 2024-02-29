@@ -43,7 +43,7 @@ const getUrl = (item) => {
 };
 const getPoints = async () => {
   try {
-    const response = await fetch("https://ergast.com/api/f1/2023/driverStandings.json");
+    const response = await fetch("https://ergast.com/api/f1/2024/driverStandings.json");
     const data = await response.json();
     f1.value.points = data.MRData.StandingsTable.StandingsLists[0].DriverStandings;
     f1.value.pointMax = data.MRData.StandingsTable.StandingsLists[0].DriverStandings[0].points;

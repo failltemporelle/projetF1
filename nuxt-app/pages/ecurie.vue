@@ -40,7 +40,7 @@ export default {
   methods: {
     getpointE() {
       this.f1.points = [];
-      fetch("https://ergast.com/api/f1/2023/constructorStandings.json")
+      fetch("https://ergast.com/api/f1/2024/constructorStandings.json")
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
