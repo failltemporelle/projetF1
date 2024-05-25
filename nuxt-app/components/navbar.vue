@@ -1,4 +1,3 @@
-
 <template>
   <div class="navbar bg-base-100 sticky top-0 z-50">
     <div class="navbar-start">
