@@ -2,7 +2,7 @@
   <Navbar />
   <section class="grid grid-cols-4 gap-6 p-8">
     <div v-for="item in f1.race"
-      :class="{'card hover:shadow-lg transition-shadow rounded-lg text-card-foreground bg-secondary': true, 'bg-red-500': isPastRace(item.date), 'bg-card': !isPastRace(item.date)}"
+      :class="{ 'card hover:shadow-lg transition-shadow rounded-lg text-card-foreground bg-secondary': true, 'bg-red-500': isPastRace(item.date) == true, 'bg-card': !isPastRace(item.date) == false }"
       data-v0-t="card">
       <div class="grid gap-2 p-4">
         <label class="text-s color-black font-bold">Date : {{ item.date }}</label>
@@ -13,7 +13,7 @@
           </label>
           <p>Circuit : {{ item.Circuit.circuitName }}</p>
           <p class="text-sm text-gray-500 dark:text-gray-400"> Localisation: {{ item.Circuit.Location.country }} {{
-            item.Circuit.Location.locality }}</p>
+      item.Circuit.Location.locality }}</p>
         </div>
       </div>
     </div>
@@ -48,7 +48,12 @@ export default {
     const isPastRace = (date) => {
       const raceDate = new Date(date);
       const currentDate = new Date();
-      return raceDate < currentDate;
+      console.log(raceDate, currentDate);
+      if (raceDate < currentDate) {
+        return true
+      } else {
+        return false
+      }
     };
 
     onMounted(getCourse);
@@ -56,10 +61,3 @@ export default {
   },
 };
 </script>
-
-<style>
-/* Add any additional CSS you need */
-.bg-red-500 {
-  background-color: red;
-}
-</style>
