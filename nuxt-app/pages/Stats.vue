@@ -2,7 +2,7 @@
     <Navbar/>
     <div v-if="loading" class="text-lg">Chargement... </div>
     <Completion />
-    <div class="bg-secondary text-primary-content rounded-xl card hover:shadow-lg transition-shadow p-6 m-6 bg-base-100">
+    <div class="text-primary-content rounded-xl card hover:shadow-lg transition-shadow p-6 m-6 bg-base-100">
         <canvas id="pointsChart"></canvas>
    
 </div>

@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-green-100 text-black rounded-xl p-6 max-w-md mx-auto hover:shadow-lg">
+    <div class=" card text-black rounded-xl p-6 max-w-md mx-auto hover:shadow-lg">
       <div v-if="loading" class="text-lg">Chargement...</div>
       <div v-else-if="error" class="text-lg">{{ error }}</div>
       <div v-else>

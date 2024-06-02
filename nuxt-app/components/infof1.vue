@@ -1,16 +1,16 @@
 <template>
-    <Navbar />
     <div v-if="f1.race.length > 0">
         <div v-for="item in f1.race" :key="item.round">
-            <div class="p-6 bg-gray-900 text-white rounded-lg shadow-md">
+            <div class="p-6 text-white rounded-lg shadow-md">
                 <div class="flex justify-between items-center mb-4">
-                    <h1 class="text-2xl font-bold">Prochaine course</h1>
+                    <h1 class="text-2xl font-bold text-center text-black">Prochaine course</h1>
                     <!-- <img src="/path-to-logo.png" alt="F1 Logo" class="h-10"> -->
                 </div>
-                <h2 class="text-xl font-bold">{{ item.raceName }}</h2>
+                <h2 class="text-xl font-bold text-black">{{ item.raceName }}</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div>
-                        <!-- <img src="/path-to-track.png" alt="Track Layout" class="w-full"> -->
+                    <div
+                        class="bg-secondary text-primary-content rounded-xl card hover:shadow-lg transition-shadow p-6 m-6">
+                        <img src="../assets/melbourne.png" alt="Track Layout" class="w-full">
                         <p class="mt-2">Nombre de tours : 58</p>
                         <p>Longueur du circuit : 5.303 km</p>
                         <p>Distance de la course : 307.574 km</p>
@@ -18,7 +18,7 @@
                     <div>
                         <div
                             class="bg-secondary text-primary-content rounded-xl card hover:shadow-lg transition-shadow p-6 m-6">
-                            <h2 class="text-xl font-semibold">Programme</h2>
+                            <h2 class="text-xl font-semibold text-center text-black">Programme</h2>
                             <ul class="mt-2">
                                 <li>Essais 1 : {{ item.FirstPractice.date }} {{ item.FirstPractice.time }}</li>
                                 <li>Essais 2 : {{ item.SecondPractice.date }} {{ item.SecondPractice.time }}</li>
@@ -29,16 +29,16 @@
                         </div>
                         <div
                             class="bg-secondary text-primary-content rounded-xl card hover:shadow-lg transition-shadow p-6 m-6">
-                            <h3 class="text-lg font-semibold">Meilleur pilote actuel</h3>
-                            <div class="flex items-center mt-2">
-                                <div v-for="driver in f1.bestRacer" :key="driver.Driver.driverId">
-                                    <img :src="getUrl(driver.Driver.driverId)" alt="Image du pilote"
-                                        class="mx-auto lg:block hidden" width="200">
+                            <h3 class="text-lg font-semibold text-center">Meilleur pilote actuel</h3>
+                            <div class="flex flex-col mt-2">
+                                <div v-for="driver in f1.bestRacer" :key="driver.Driver.driverId"
+                                    class="flex items-center mb-4">
+                                    <img :src="getUrl(driver.Driver.driverId)" alt="Image du pilote" class="h-36 w-36">
                                     <div class="ml-4">
-                                        <p class="ml-2">{{ driver.Driver.givenName }} {{ driver.Driver.familyName }}</p>
+                                        <p>{{ driver.Driver.givenName }} {{ driver.Driver.familyName }} {{ driver.Points
+                                            }}</p>
                                         <p>Points : {{ driver.points }}</p>
                                         <p>Victoires : {{ driver.wins }}</p>
-                                        <p>Podiums : {{ driver.podiums }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -46,7 +46,7 @@
                     </div>
                     <div
                         class="bg-secondary text-primary-content rounded-xl card hover:shadow-lg transition-shadow p-6 m-6 pr-9">
-                        <h2 class="text-xl font-semibold">Classement actuel</h2>
+                        <h2 class="text-xl font-semibold text-center">Classement actuel</h2>
                         <div class="p-4" v-for="driver in f1.points" :key="driver.Driver.driverId">
                             <ul>
                                 <li class="flex items-center justify-between">
@@ -59,11 +59,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="mt-4 p-4 bg-gray-800 rounded-lg">
+                <!-- <div class="mt-4 p-4 bg-gray-800 rounded-lg">
                     <h2 class="text-xl font-semibold">Melbourne</h2>
                     <p class="mt-2">Quand la Formule 1 est arrivée en Australie en 1985, elle s'est installée à
                         Adelaide...</p>
-                </div>
+                </div> -->
                 <div class="mt-4 p-4 bg-gray-800 rounded-lg flex items-center justify-between">
                     <div>
                         <h2 class="text-xl font-semibold">Météo</h2>
@@ -75,7 +75,6 @@
             </div>
         </div>
     </div>
-    <Footer />
 </template>
 
 <script setup>
