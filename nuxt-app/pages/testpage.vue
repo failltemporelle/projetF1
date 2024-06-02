@@ -5,12 +5,12 @@
             <div class="p-6 bg-gray-900 text-white rounded-lg shadow-md">
                 <div class="flex justify-between items-center mb-4">
                     <h1 class="text-2xl font-bold">Prochaine course</h1>
-                    <img src="/path-to-logo.png" alt="F1 Logo" class="h-10">
+                    <!-- <img src="/path-to-logo.png" alt="F1 Logo" class="h-10"> -->
                 </div>
                 <h2 class="text-xl font-bold">{{ item.raceName }}</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
-                        <img src="/path-to-track.png" alt="Track Layout" class="w-full">
+                        <!-- <img src="/path-to-track.png" alt="Track Layout" class="w-full"> -->
                         <p class="mt-2">Nombre de tours : 58</p>
                         <p>Longueur du circuit : 5.303 km</p>
                         <p>Distance de la course : 307.574 km</p>
@@ -70,7 +70,7 @@
                         <p class="mt-2">Température : 23°C</p>
                         <p>Vent : 24 km/h</p>
                     </div>
-                    <img src="/path-to-weather-icon.png" alt="Icône météo" class="h-16 w-16">
+                    <!-- <img src="/path-to-weather-icon.png" alt="Icône météo" class="h-16 w-16"> -->
                 </div>
             </div>
         </div>
