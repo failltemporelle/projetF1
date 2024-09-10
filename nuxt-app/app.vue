@@ -1,5 +1,6 @@
 <template>
- <html data-theme="retro">
+ <!-- <html data-theme="retro"> -->
+  <html>
   <NuxtLayout>
 
     <NuxtPage />
