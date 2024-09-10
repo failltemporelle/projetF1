@@ -53,3 +53,9 @@ const createChart = () => {
 onMounted(fetchDriverStandings); // Appelez seulement fetchDriverStandings ici
 </script>
     
+
+
+
+
+
+

@@ -25,7 +25,8 @@
 
               <div class="flex flex-col space-y-1.5 p-6 items-center text-center">
                 <!-- Nom du pilote -->
-                <p class="card-title mb-2 text-xl md:text-2xl text-bold text-zinc-900 font-bold">{{ item.Driver.givenName }} {{ item.Driver.familyName }}</p>
+                <p class="card-title mb-2 text-xl md:text-2xl text-bold text-zinc-900 font-bold">{{
+                  item.Driver.givenName }} {{ item.Driver.familyName }}</p>
 
                 <!-- Image avec effet de zoom au survol -->
                 <div class="relative">
@@ -45,7 +46,8 @@
                 <!-- Bouton avec lien vers plus d'infos -->
                 <button class="btn btn-sm mt-3">
                   <NuxtLink :to="`/pilote/${item.Driver.driverId}`">
-                    <span class="text-sm font-medium hover:underline underline-offset-4 text-xs button">Informations</span>
+                    <span
+                      class="text-sm font-medium hover:underline underline-offset-4 text-xs button">Informations</span>
                   </NuxtLink>
                 </button>
               </div>
@@ -54,17 +56,28 @@
 
           <!-- Face arrière de la carte -->
           <div class="card-back">
-            <div
-              class="rounded-lg text-card-foreground card hover:shadow-lg transition-shadow bg-zinc-300 p-6 flex items-center justify-center">
-              <!-- Contenu personnalisé de la face arrière -->
-              <p class="text-lg text-gray-800 font-bold">Détails sur {{ item.Driver.givenName }} {{ item.Driver.familyName }}.</p>
-              <p class="text-sm text-gray-600">Origine : {{ item.Driver.nationality }}</p>
-              <p class="text-sm text-gray-600">Date de naissance : {{ item.Driver.dateOfBirth }}</p>
-              <img
-                :src="`https://raw.githubusercontent.com/failltemporelle/projetF1/main/nuxt-app/assets/ecuries/${item.Constructors[0].constructorId}.png`"
-                class="mx-auto" width="200" height="300">
-            </div>
-          </div>
+  <div
+    class="rounded-lg text-card-foreground card hover:shadow-lg transition-shadow p-6 flex flex-col items-center justify-center space-y-4">
+    
+    <!-- Titre de la carte -->
+    <p class="text-xl text-gray-800 font-bold text-center">Détails sur {{ item.Driver.givenName }} {{ item.Driver.familyName }}.</p>
+    
+    <!-- Origine et date de naissance avec texte centré -->
+    <div class="text-center">
+      <p class="text-md text-gray-600"><strong>Origine :</strong> {{ item.Driver.nationality }}</p>
+      <p class="text-md text-gray-600"><strong>Naissance :</strong> {{ item.Driver.dateOfBirth }}</p>
+    </div>
+    
+    <!-- Image centrée -->
+    <div class="flex justify-center">
+      <img
+        :src="`https://raw.githubusercontent.com/failltemporelle/projetF1/main/nuxt-app/assets/ecuries/${item.Constructors[0].constructorId}.png`"
+         width="400" height="400" alt="Image de l'écurie">
+    </div>
+    
+  </div>
+</div>
+
         </div>
       </div>
     </div>
@@ -98,12 +111,15 @@ onMounted(getPoints);
 <style scoped>
 .card-container {
   perspective: 1000px;
-  width: 90vw; /* Prend 90% de la largeur de l'écran pour les mobiles */
-  height: 300px; /* Ajuste la hauteur pour mobile */
+  width: 90vw;
+  /* Prend 90% de la largeur de l'écran pour les mobiles */
+  height: 300px;
+  /* Ajuste la hauteur pour mobile */
   margin: 10px;
 }
 
 @media (min-width: 768px) {
+
   /* Adaptation pour les écrans plus larges (tablettes et desktop) */
   .card-container {
     width: 250px;
@@ -145,11 +161,11 @@ onMounted(getPoints);
   .text-lg {
     font-size: 1rem;
   }
-  
+
   .card-title {
     font-size: 1.2rem;
   }
-  
+
   .btn {
     font-size: 0.8rem;
   }
