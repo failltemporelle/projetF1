@@ -1,5 +1,12 @@
 module.exports = {
-  content: ['./pages/**/*.{html,js}', './components/**/*.{html,js}'],
+  content: [
+    './pages/**/*.{html,js}', 
+    './components/**/*.{html,js}',
+    '•/pages/**/*.{vue, js, ts, jsx, tsx)' ,
+    '/components/**/*. (vue, js, ts, jsx, tsx}' ,
+    './app/**/*.{vue, js, ts, jsx, tsx}',
+    './node_modules/@shadcn/**/*.{vue,js,ts,jsx,tsx}'
+  ],
   plugins: [require('@tailwindcss/typography'), require('daisyui')],
   daisyui: {
     themes: [
