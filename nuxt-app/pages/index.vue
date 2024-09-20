@@ -67,7 +67,7 @@ const nextRace = ref(null);
 // Fonction pour récupérer le classement des pilotes
 const fetchCurrentStandings = async () => {
   try {
-    const response = await fetch('http://ergast.com/api/f1/current/driverStandings.json');
+    const response = await fetch('https://ergast.com/api/f1/current/driverStandings.json');
     const data = await response.json();
     currentStandings.value = data.MRData.StandingsTable.StandingsLists[0].DriverStandings.slice(0, 3);
   } catch (error) {
@@ -78,7 +78,7 @@ const fetchCurrentStandings = async () => {
 // Fonction pour récupérer le classement des écuries
 const fetchCurrentStandingsConstructor = async () => {
   try {
-    const response = await fetch('http://ergast.com/api/f1/current/constructorStandings.json');
+    const response = await fetch('https://ergast.com/api/f1/current/constructorStandings.json');
     const data = await response.json();
     currentStandingsConstructor.value = data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings.slice(0, 3);
   } catch (error) {
@@ -89,7 +89,7 @@ const fetchCurrentStandingsConstructor = async () => {
 // Fonction pour récupérer la prochaine course
 const fetchNextRace = async () => {
   try {
-    const response = await fetch('http://ergast.com/api/f1/current.json');
+    const response = await fetch('https://ergast.com/api/f1/current.json');
     const data = await response.json();
     const races = data.MRData.RaceTable.Races;
     const today = new Date();
