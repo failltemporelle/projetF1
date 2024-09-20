@@ -1,23 +1,18 @@
 <template>
   <navbar />
   <slot />
-  <!-- <div class="flex justify-center items-center">
-    <Pilotestat />
-  </div> -->
-  <!-- Ajout du bouton pour changer l'année -->
+  
   <div class="flex justify-center items-center my-4">
     <button class="btn btn-xs btn-error text-white text-bold" @click="changeYear(-1)">Année précédente</button>
-    <button class="btn btn-xs  ml-4 text-bold" @click="changeYear(1)">Année suivante</button>
+    <button class="btn btn-xs ml-4 text-bold" @click="changeYear(1)">Année suivante</button>
   </div>
-
- 
 
   <div class="flex flex-row flex-wrap place-content-center">
     <div class="p-3 m-2 w-full md:w-auto" v-for="item in f1.points" :key="item.Driver.driverId">
       <div class="card-container">
         <div class="card-inner">
-          <div class="card-front">
-            <div class="rounded-lg text-card-foreground card hover:shadow-lg transition-shadow bg-zinc-200">
+          <div :class="['card-front', getCardClass(item.position)]">
+            <div class="rounded-lg text-card-foreground card hover:shadow-lg transition-shadow">
               <div class="items-center text-center relative">
                 <span class="indicator indicator-item badge font-bold m-2 text-red-800">
                   {{ item.position }}
@@ -28,40 +23,33 @@
               </div>
 
               <div class="flex flex-col space-y-1.5 p-6 items-center text-center">
-                <p class="card-title mb-2 text-xl md:text-2xl text-bold text-zinc-900 font-bold">{{
-                  item.Driver.givenName }} {{ item.Driver.familyName }}</p>
+                <p class="card-title mb-2 text-xl md:text-2xl text-bold text-zinc-900 font-bold">
+                  {{ item.Driver.givenName }} {{ item.Driver.familyName }}
+                </p>
 
                 <div class="relative">
-                  <img :src="getUrl(item.Driver.driverId)" alt="Image du pilote" class="mx-auto lg:block hidden"
-                    width="200" height="100">
+                  <img :src="getUrl(item.Driver.driverId)" alt="Image du pilote" class="mx-auto lg:block hidden" width="200" height="100">
                 </div>
 
                 <progress class="progress w-full md:w-50 bg-red-600" :value="item.points" :max="f1.pointMax"></progress>
 
                 <p class="text-sm text-gray-700 mt-2"><strong>Équipe:</strong> {{ item.Constructors[0].name }}</p>
                 <p class="text-sm text-gray-700"><strong>Victoires:</strong> {{ item.wins }}</p>
-
-                <button class="btn btn-sm mt-3">
-                  <NuxtLink :to="`/pilote/${item.Driver.driverId}`">
-                    <span class="text-sm font-medium hover:underline underline-offset-4 text-xs button">Informations</span>
-                  </NuxtLink>
-                </button>
               </div>
             </div>
           </div>
 
           <div class="card-back">
-            <div
-              class="rounded-lg text-card-foreground card hover:shadow-lg transition-shadow p-6 flex flex-col items-center justify-center space-y-4">
-              <p class="text-xl text-gray-800 font-bold text-center">Détails sur {{ item.Driver.givenName }} {{ item.Driver.familyName }}.</p>
+            <div class="rounded-lg text-card-foreground card hover:shadow-lg transition-shadow p-6 flex flex-col items-center justify-center space-y-4">
+              <p class="text-xl text-gray-800 font-bold text-center">
+                Détails sur {{ item.Driver.givenName }} {{ item.Driver.familyName }}.
+              </p>
               <div class="text-center">
                 <p class="text-md text-gray-600"><strong>Origine :</strong> {{ item.Driver.nationality }}</p>
                 <p class="text-md text-gray-600"><strong>Naissance :</strong> {{ item.Driver.dateOfBirth }}</p>
               </div>
               <div class="flex justify-center">
-                <img
-                  :src="`https://raw.githubusercontent.com/failltemporelle/projetF1/main/nuxt-app/assets/ecuries/${item.Constructors[0].constructorId}.png`"
-                  width="400" height="400" alt="Image de l'écurie">
+                <img :src="`https://raw.githubusercontent.com/failltemporelle/projetF1/main/nuxt-app/assets/ecuries/${item.Constructors[0].constructorId}.png`" width="400" height="400" alt="Image de l'écurie">
               </div>
             </div>
           </div>
@@ -102,24 +90,30 @@ const changeYear = (delta) => {
   getPoints(); // Mettre à jour les données avec la nouvelle année
 };
 
+// Fonction pour appliquer les classes en fonction de la position
+const getCardClass = (position) => {
+  if (position === 1) {
+    return 'bg-gold';
+  } else if (position === 2) {
+    return 'bg-silver';
+  } else if (position === 3) {
+    return 'bg-bronze';
+  }
+  return 'bg-zinc-200'; // Couleur par défaut pour les autres positions
+};
+
 onMounted(getPoints);
 </script>
-
-
 
 <style scoped>
 .card-container {
   perspective: 1000px;
   width: 90vw;
-  /* Prend 90% de la largeur de l'écran pour les mobiles */
   height: 300px;
-  /* Ajuste la hauteur pour mobile */
   margin: 10px;
 }
 
 @media (min-width: 768px) {
-
-  /* Adaptation pour les écrans plus larges (tablettes et desktop) */
   .card-container {
     width: 250px;
     height: 400px;
@@ -137,7 +131,6 @@ onMounted(getPoints);
 
 .card-container:hover .card-inner {
   transform: rotateY(180deg);
-  /* Rotation sur l'axe Y pour retourner la carte */
 }
 
 .card-front,
@@ -146,14 +139,29 @@ onMounted(getPoints);
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  /* Cache la face arrière lorsqu'on ne la voit pas */
   border-radius: 12px;
 }
 
 .card-back {
   transform: rotateY(180deg);
-  /* Face arrière est initialement retournée */
   background-color: #f8f9fa;
+}
+
+/* Styles pour les différentes couleurs */
+.bg-gold {
+  background-color: #FFD700; /* Doré */
+}
+
+.bg-silver {
+  background-color: #C0C0C0; /* Argenté */
+}
+
+.bg-bronze {
+  background-color: #CD7F32; /* Bronze */
+}
+
+.bg-zinc-200 {
+  background-color: #E0E0E0; /* Couleur par défaut */
 }
 
 @media (max-width: 768px) {
